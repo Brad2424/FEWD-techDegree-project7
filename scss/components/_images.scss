@@ -1,0 +1,13 @@
+header img {
+    max-width: 50px;
+    max-height: 50px;
+    margin: 10px;
+    &.notification {
+        border-right: 1px solid $secondary-color;
+        padding: 10px;
+    }
+}
+
+.profile {
+    border-radius: 50%;
+}

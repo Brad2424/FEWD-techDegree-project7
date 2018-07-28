@@ -1,3 +1,23 @@
 * {
     box-sizing: border-box;
 }
+
+a {
+    cursor: pointer;
+}
+
+header {
+    background-color: $primary-color;
+    * {
+        color: $secondary-font-color;
+    }
+    span {
+        margin-right: 20px;
+    }
+    h1 {
+        display: inline-block;
+        flex: 1;
+        margin-left: 20px;
+        font-weight: normal;
+    }
+}
