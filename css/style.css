@@ -36,24 +36,23 @@ h2 {
 .grid-container__page {
   display: grid;
   grid-template-columns: 45px 1fr;
-  grid-template-rows: 45px 100vh;
+  grid-template-rows: 45px 1fr;
   grid-template-areas: "header header" "nav main"; }
   @media (min-width: 485px) {
     .grid-container__page {
       grid-template-columns: 60px 1fr;
-      grid-template-rows: 60px 100vh; } }
+      grid-template-rows: 60px 1fr; } }
 .grid-container__main {
-  height: 100%;
   width: 95%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 1fr);
+  grid-gap: 20px;
+  grid-template-rows: repeat(8, minmax(200px, 1fr));
   grid-template-areas: "traffic" "dailyTraf" "mobileUsers" "socialStats" "newMemb" "recentAct" "messageUser" "settings"; }
   @media (min-width: 485px) {
     .grid-container__main {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(5, 1fr);
+      grid-template-rows: repeat(5, minmax(250px, 1fr));
       grid-template-areas: "traffic traffic" "dailyTraf mobileUsers" "socialStats socialStats" "newMemb recentAct" "messageUser settings"; } }
 
 header {
@@ -199,8 +198,7 @@ header {
       width: 80%; } }
   @media (min-width: 1024px) {
     .search-bar-div {
-      justify-content: initial;
-      width: 90%; } }
+      width: 85%; } }
 
 .search-bar-div input {
   margin: auto;
@@ -226,6 +224,12 @@ header {
       font-size: 1.2em; } }
   @media (min-width: 1024px) {
     .tab-div {
-      width: 10%; } }
+      width: 15%; } }
+
+.graphDiv {
+  position: relative;
+  width: 99%;
+  height: 99%;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */

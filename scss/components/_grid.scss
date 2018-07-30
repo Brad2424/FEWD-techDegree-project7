@@ -3,23 +3,22 @@
     &page {
         display: grid;
         grid-template-columns: 45px 1fr;
-        grid-template-rows: 45px 100vh;
+        grid-template-rows: 45px 1fr;
         grid-template-areas: 
             "header header"
             "nav main";
         @include mq(small) {
             grid-template-columns: 60px 1fr;
-            grid-template-rows: 60px 100vh;
+            grid-template-rows: 60px 1fr;
         }
     }
 
     &main {
-        height: 100%;
         width: 95%;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, 1fr);
+        grid-gap: $sectionGap;
+        grid-template-rows: repeat(8, minmax(200px, 1fr));
         grid-template-areas:
             "traffic"
             "dailyTraf"
@@ -31,7 +30,7 @@
             "settings";
             @include mq(small) {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: repeat(5, 1fr);
+                grid-template-rows: repeat(5, minmax(250px, 1fr));
                 grid-template-areas:
                     "traffic traffic"
                     "dailyTraf mobileUsers"

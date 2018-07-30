@@ -13,8 +13,7 @@
         width: 80%;
     }
     @include mq(large) {
-        justify-content: initial;
-        width: 90%;
+        width: 85%;
     }
 }
 
@@ -43,6 +42,6 @@
         font-size: 1.2em;
     }
     @include mq(large) {
-        width: 10%;
+        width: 15%;
     }
 }
