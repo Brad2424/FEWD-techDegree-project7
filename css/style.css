@@ -1,7 +1,7 @@
 .search-bar-div input {
   border-radius: 5px;
   border: lightgray solid 1px;
-  padding: 5px;
+  padding: 10px;
   overflow: hidden; }
 
 @keyframes jingle {
@@ -33,49 +33,6 @@ h2 {
       display: initial;
       font-size: 1em; } }
 
-.search-bar-div input {
-  margin: auto;
-  width: 90%; }
-  @media (min-width: 768px) {
-    .search-bar-div input {
-      width: 70%;
-      margin-right: 20px; } }
-
-.search-bar-div {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  height: 50px;
-  border: lightgrey 1px solid; }
-  @media (min-width: 485px) {
-    .search-bar-div {
-      float: right;
-      width: 70%; } }
-  @media (min-width: 768px) {
-    .search-bar-div {
-      justify-content: initial;
-      width: 80%; } }
-  @media (min-width: 1024px) {
-    .search-bar-div {
-      justify-content: initial;
-      width: 90%; } }
-
-.tab-div {
-  display: none; }
-  @media (min-width: 485px) {
-    .tab-div {
-      display: inline-flex;
-      width: 30%;
-      height: 50px;
-      justify-content: center;
-      align-items: center; } }
-  @media (min-width: 768px) {
-    .tab-div {
-      width: 20%; } }
-  @media (min-width: 1024px) {
-    .tab-div {
-      width: 10%; } }
-
 .grid-container__page {
   display: grid;
   grid-template-columns: 45px 1fr;
@@ -87,11 +44,17 @@ h2 {
       grid-template-rows: 60px 100vh; } }
 .grid-container__main {
   height: 100%;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: "traffic traffic" "dailyTraf mobileUsers" "socialStats socialStats" "newMemb recentAct" "messageUser settings"; }
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas: "traffic" "dailyTraf" "mobileUsers" "socialStats" "newMemb" "recentAct" "messageUser" "settings"; }
+  @media (min-width: 485px) {
+    .grid-container__main {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-areas: "traffic traffic" "dailyTraf mobileUsers" "socialStats socialStats" "newMemb recentAct" "messageUser settings"; } }
 
 header {
   grid-area: header; }
@@ -153,7 +116,8 @@ main {
     font-size: 1.5em;
     padding: 0;
     margin: 5px;
-    margin-left: auto; }
+    margin-left: auto;
+    cursor: pointer; }
   .alert-div .alert {
     font-size: 1em; }
 
@@ -218,5 +182,50 @@ header {
       header .profile {
         width: 50px;
         height: 50px; } }
+
+.search-bar-div {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  height: 60px;
+  border: lightgrey 1px solid; }
+  @media (min-width: 485px) {
+    .search-bar-div {
+      float: right;
+      width: 70%; } }
+  @media (min-width: 768px) {
+    .search-bar-div {
+      justify-content: initial;
+      width: 80%; } }
+  @media (min-width: 1024px) {
+    .search-bar-div {
+      justify-content: initial;
+      width: 90%; } }
+
+.search-bar-div input {
+  margin: auto;
+  width: 90%; }
+  @media (min-width: 768px) {
+    .search-bar-div input {
+      width: 70%;
+      margin-right: 20px; } }
+
+.tab-div {
+  display: none; }
+  @media (min-width: 485px) {
+    .tab-div {
+      display: inline-flex;
+      width: 30%;
+      height: 60px;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.1em; } }
+  @media (min-width: 768px) {
+    .tab-div {
+      width: 20%;
+      font-size: 1.2em; } }
+  @media (min-width: 1024px) {
+    .tab-div {
+      width: 10%; } }
 
 /*# sourceMappingURL=style.css.map */

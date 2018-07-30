@@ -13,13 +13,3 @@ h2 {
         font-size: 1em;
     }
 }
-
-.search-bar-div input {
-    @extend %input;
-    margin: auto;
-    width: 90%;
-    @include mq(medium) {
-        width: 70%;
-        margin-right: 20px;
-    }
-}
