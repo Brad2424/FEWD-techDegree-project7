@@ -2,37 +2,33 @@ const traffic = document.getElementById("traffic");
 const dailyTraf = document.getElementById("dailyTraf");
 const mobileUsers = document.getElementById("mobileUsers");
 
-
 let myCharts = new Chart(traffic, {
     type: 'line',
     data: {
         labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
         datasets: [{
-            label: '# of Votes',
+            label: 'TRAFFIC',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(116, 119, 191, 0.2)',
             ],
             borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(116, 119, 191, 1)'
             ],
-            borderWidth: 1
-        }]
+            borderWidth: 1,
+            lineTension: 0,
+            pointBackgroundColor: 'white',
+            pointRadius: '5',
+        }],
     },
     options: {
         responsive: true,
         maintainAspectRatio: false,
         responsiveAnimationDuration: 0,
+        title: {
+            display: true,
+            position: 'top',
+            text: 'TITLE',
         scales: {
             yAxes: [{
                 ticks: {
@@ -41,6 +37,7 @@ let myCharts = new Chart(traffic, {
             }]
         }
     }
+}
 });
 
 myCharts += new Chart(dailyTraf, {
@@ -51,20 +48,20 @@ myCharts += new Chart(dailyTraf, {
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
             ],
             borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(56, 59, 131, 1)',
             ],
             borderWidth: 1
         }]
@@ -84,27 +81,22 @@ myCharts += new Chart(dailyTraf, {
 });
 
 myCharts += new Chart(mobileUsers, {
-    type: 'pie',
+    type: 'doughnut',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Phones", "Tablets", "Desktop"],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(116, 119, 191, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(176, 179, 251, 1)',
+
             ],
             borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(116, 119, 191, 1)',
+                'rgba(56, 59, 131, 1)',
+                'rgba(176, 179, 251, 1)',
             ],
             borderWidth: 1
         }]

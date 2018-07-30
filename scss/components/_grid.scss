@@ -14,8 +14,6 @@
     }
 
     &main {
-        width: 95%;
-        margin: 0 auto;
         display: grid;
         grid-gap: $sectionGap;
         grid-template-rows: repeat(8, minmax(200px, 1fr));

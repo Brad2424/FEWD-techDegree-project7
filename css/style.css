@@ -43,8 +43,6 @@ h2 {
       grid-template-columns: 60px 1fr;
       grid-template-rows: 60px 1fr; } }
 .grid-container__main {
-  width: 95%;
-  margin: 0 auto;
   display: grid;
   grid-gap: 20px;
   grid-template-rows: repeat(8, minmax(200px, 1fr));
@@ -119,6 +117,9 @@ main {
     cursor: pointer; }
   .alert-div .alert {
     font-size: 1em; }
+    @media (min-width: 1024px) {
+      .alert-div .alert strong:first-of-type {
+        font-size: 1.5em; } }
 
 nav {
   background-color: #4d4c72; }
@@ -228,8 +229,8 @@ header {
 
 .graphDiv {
   position: relative;
-  width: 99%;
-  height: 99%;
+  width: 95%;
+  height: 95%;
   margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */

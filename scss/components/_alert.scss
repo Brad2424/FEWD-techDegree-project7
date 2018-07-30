@@ -32,5 +32,10 @@
         }
         .alert {
             font-size: 1em;
+            strong:first-of-type {
+                @include mq(large){
+                font-size: 1.5em;
+                }
+            }
         }
 }
