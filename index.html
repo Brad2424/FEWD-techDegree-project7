@@ -8,10 +8,23 @@
     <link rel="stylesheet" type="text/css" media="screen" href="scss/base/normalize.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
-<body class="grid-container__main">
+<body class="grid-container__page">
     <header>
         <h1><strong>Mock</strong> Dashboard&trade;</h1>
-        <img class="notification" src="icons/icon-bell.svg" alt="Notification bell icon">
+        <a href="">
+            <svg class="notification" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                <style type="text/css">
+                    .st0{fill:#FFFFFF;}
+                </style>
+                <g id="_x36__6_">
+                    <g>
+                        <path class="st0" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+                            c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+                    </g>
+                </g>
+            </svg>
+        </a>
         <img class="profile" src="images/profile-picture.JPG" alt="Your profile picture">
         <span>Bradley Murchison</span>
     </header>
@@ -22,7 +35,43 @@
         <a href=""><img src="icons/icon-settings.svg" alt="Settings icon"></a>
     </nav>
     <main>
-        
+        <div class="tab-div">
+            <h2>Dashboard</h2>
+        </div>
+        <div class="search-bar-div">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="alert-div">
+           <p class="alert"><strong>Alert</strong></p>
+           <p>Lorem ipsum dolor sit amet, ei nam mundi expetendis suscipiantur, timeam laoreet albucius ea eam.</p>
+           <button><strong>&times;</strong></button>
+        </div>
+        <div class="grid-container__main">
+            <div class="traffic">
+                traffic
+                </div>
+            <div class="dailyTraf">
+                dailyTraf
+                </div>
+            <div class="mobileUsers">
+                mobileUsers
+                </div>
+            <div class="socialStats">
+                socialStats
+                </div>
+            <div class="newMemb">
+                newMemb
+                </div>
+            <div class="recentAct">
+                recentAct
+                </div>
+            <div class="messageUser">
+                messageUser
+                </div>   
+            <div class="settings">
+                settings
+                </div>                              
+        </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     <script src="js/main.js"></script>

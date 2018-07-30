@@ -1,0 +1,36 @@
+.alert-div {
+    background-color: $primary-color;
+    display: flex;
+    align-items: center;
+    // justify-content: space-around;
+    width: 95%;
+    border: $primary-color solid 1px;
+    border-radius: 5px;
+    margin: $gap auto;
+    @include mq(large) {
+        width: fit-content;
+        margin: $gap auto $gap $gap;
+    } 
+        * {
+            color: $secondary-font-color;
+            background-color: $primary-color; 
+        }
+        p {
+            display: inline;
+            font-size: 0.8em;
+            margin: 5px;
+            @include mq(medium) {
+                font-size: 1em;
+            } 
+        }
+        button {
+            border: $primary-color solid 1px;
+            font-size: 1.5em;
+            padding: 0;
+            margin: 5px;
+            margin-left: auto;
+        }
+        .alert {
+            font-size: 1em;
+        }
+}

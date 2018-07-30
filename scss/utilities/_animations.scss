@@ -1,0 +1,22 @@
+@keyframes jingle {
+    20% {
+        transform-origin: 50% 0%;
+        transform: rotate(30deg);
+    }
+    40% {
+        transform-origin: 50% 0%;
+        transform: rotate(-30deg);
+    }
+    60% {
+        transform-origin: 50% 0%;
+        transform: rotate(30deg);
+    }
+    80% {
+        transform-origin: 50% 0%;
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform-origin: 50% 0%;
+        transform: rotate(0deg);
+    }
+}

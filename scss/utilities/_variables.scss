@@ -2,4 +2,11 @@
 $primary-color: rgb(116, 119, 191);
 $secondary-color: rgb(77, 76, 114);
 // ----- FONT COLORS ------ //
+$primary-font-color: rgb(127,127,127);
 $secondary-font-color: white;
+// ----- LAYOUT ------ //
+$gap: 20px;
+// ----- BREAKPOINTS ------ //
+$breakpoint-sml: 485px;
+$breakpoint-med: 768px;
+$breakpoint-lrg: 1024px;
