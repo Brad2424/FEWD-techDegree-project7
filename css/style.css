@@ -41,24 +41,38 @@ h3 {
   font-size: 1em; }
 
 .social-stat {
-  flex: 1;
-  margin: 20px;
+  margin: 10px;
   border: solid lightgrey 1px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
   .social-stat * {
     display: inline-block; }
   .social-stat P {
-    font-size: 2.5em;
-    margin: 0; }
+    font-size: 1.5em;
+    margin: 0;
+    color: #7477bf; }
+    @media (min-width: 485px) {
+      .social-stat P {
+        font-size: 2em; } }
   .social-stat h4 {
-    font-size: 1.2em;
-    margin: 0; }
+    font-size: 1em;
+    margin: 0;
+    color: #4d4c72; }
+    @media (min-width: 485px) {
+      .social-stat h4 {
+        font-size: 1.2em; } }
   .social-stat svg {
-    height: 70px;
-    width: 70px;
-    margin: 20px 5px;
+    height: 30px;
+    width: 30px;
     background-color: #7477bf;
     border-radius: 50%; }
+    @media (min-width: 485px) {
+      .social-stat svg {
+        height: 40px;
+        width: 40px; } }
     .social-stat svg path {
       fill: white;
       padding: 5px; }
@@ -269,7 +283,7 @@ header {
 .graphDiv {
   position: relative;
   width: 95%;
-  height: 85%;
+  height: 80%;
   margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */
