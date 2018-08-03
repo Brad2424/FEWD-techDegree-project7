@@ -6,10 +6,6 @@
     border: $primary-color solid 1px;
     border-radius: 5px;
     margin: $sectionGap auto;
-    @include mq(large) {
-        width: fit-content;
-        margin: $sectionGap auto $sectionGap $sectionGap;
-    } 
         * {
             color: $secondary-font-color;
             background-color: $primary-color; 
@@ -24,18 +20,14 @@
         }
         button {
             border: $primary-color solid 1px;
-            font-size: 1.5em;
+            font-size: 1.7em;
             padding: 0;
             margin: 5px;
             margin-left: auto;
             cursor: pointer;
         }
         .alert {
-            font-size: 1em;
-            strong:first-of-type {
-                @include mq(large){
-                font-size: 1.5em;
-                }
-            }
+            font-size: 1.2em;
+            margin-right: 30px;
         }
 }

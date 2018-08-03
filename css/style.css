@@ -27,11 +27,34 @@ a {
   cursor: pointer; }
 
 h2 {
-  display: none; }
+  display: none;
+  color: #7f7f7f;
+  font-weight: normal; }
   @media (min-width: 485px) {
     h2 {
       display: initial;
       font-size: 1em; } }
+
+h3 {
+  margin: 20px 0 0 20px;
+  color: #7f7f7f;
+  font-size: 1em; }
+
+.social-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  border: solid 1px #7f7f7f; }
+  .social-stat svg {
+    height: 50px;
+    width: 50px; }
+
+.flex-container__social {
+  margin: auto 0;
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
 
 .grid-container__page {
   display: grid;
@@ -43,14 +66,14 @@ h2 {
       grid-template-columns: 60px 1fr;
       grid-template-rows: 60px 1fr; } }
 .grid-container__main {
+  margin-top: 20px;
   display: grid;
-  grid-gap: 20px;
-  grid-template-rows: repeat(8, minmax(200px, 1fr));
+  grid-template-rows: repeat(8, 200px);
   grid-template-areas: "traffic" "dailyTraf" "mobileUsers" "socialStats" "newMemb" "recentAct" "messageUser" "settings"; }
   @media (min-width: 485px) {
     .grid-container__main {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(5, minmax(250px, 1fr));
+      grid-template-rows: repeat(5, 300px);
       grid-template-areas: "traffic traffic" "dailyTraf mobileUsers" "socialStats socialStats" "newMemb recentAct" "messageUser settings"; } }
 
 header {
@@ -63,28 +86,36 @@ main {
   grid-area: main; }
 
 .traffic {
-  grid-area: traffic; }
+  grid-area: traffic;
+  border: solid #7f7f7f 1px; }
 
 .dailyTraf {
-  grid-area: dailyTraf; }
+  grid-area: dailyTraf;
+  border: solid #7f7f7f 1px; }
 
 .mobileUsers {
-  grid-area: mobileUsers; }
+  grid-area: mobileUsers;
+  border: solid #7f7f7f 1px; }
 
 .socialStats {
-  grid-area: socialStats; }
+  grid-area: socialStats;
+  border: solid #7f7f7f 1px; }
 
 .newMemb {
-  grid-area: newMemb; }
+  grid-area: newMemb;
+  border: solid #7f7f7f 1px; }
 
 .recentAct {
-  grid-area: recentAct; }
+  grid-area: recentAct;
+  border: solid #7f7f7f 1px; }
 
 .messageUser {
-  grid-area: messageUser; }
+  grid-area: messageUser;
+  border: solid #7f7f7f 1px; }
 
 .settings {
-  grid-area: settings; }
+  grid-area: settings;
+  border: solid #7f7f7f 1px; }
 
 .alert-div {
   background-color: #7477bf;
@@ -94,10 +125,6 @@ main {
   border: #7477bf solid 1px;
   border-radius: 5px;
   margin: 20px auto; }
-  @media (min-width: 1024px) {
-    .alert-div {
-      width: fit-content;
-      margin: 20px auto 20px 20px; } }
   .alert-div * {
     color: white;
     background-color: #7477bf; }
@@ -110,16 +137,14 @@ main {
         font-size: 1em; } }
   .alert-div button {
     border: #7477bf solid 1px;
-    font-size: 1.5em;
+    font-size: 1.7em;
     padding: 0;
     margin: 5px;
     margin-left: auto;
     cursor: pointer; }
   .alert-div .alert {
-    font-size: 1em; }
-    @media (min-width: 1024px) {
-      .alert-div .alert strong:first-of-type {
-        font-size: 1.5em; } }
+    font-size: 1.2em;
+    margin-right: 30px; }
 
 nav {
   background-color: #4d4c72; }
@@ -222,7 +247,7 @@ header {
   @media (min-width: 768px) {
     .tab-div {
       width: 20%;
-      font-size: 1.2em; } }
+      font-size: 1.3em; } }
   @media (min-width: 1024px) {
     .tab-div {
       width: 15%; } }
@@ -230,7 +255,7 @@ header {
 .graphDiv {
   position: relative;
   width: 95%;
-  height: 95%;
+  height: 85%;
   margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */

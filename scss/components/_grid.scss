@@ -14,9 +14,9 @@
     }
 
     &main {
+        margin-top: 20px;
         display: grid;
-        grid-gap: $sectionGap;
-        grid-template-rows: repeat(8, minmax(200px, 1fr));
+        grid-template-rows: repeat(8, 200px);
         grid-template-areas:
             "traffic"
             "dailyTraf"
@@ -28,7 +28,7 @@
             "settings";
             @include mq(small) {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: repeat(5, minmax(250px, 1fr));
+                grid-template-rows: repeat(5, 300px);
                 grid-template-areas:
                     "traffic traffic"
                     "dailyTraf mobileUsers"
@@ -53,32 +53,40 @@ main {
 
 .traffic {
     grid-area: traffic;
+    border: solid $primary-font-color 1px;
 }
 
 .dailyTraf {
     grid-area: dailyTraf;
+    border: solid $primary-font-color 1px;
 }
 
 .mobileUsers {
     grid-area: mobileUsers;
+    border: solid $primary-font-color 1px;
 }
 
 .socialStats {
     grid-area: socialStats;
+    border: solid $primary-font-color 1px;
 }
 
 .newMemb {
     grid-area: newMemb;
+    border: solid $primary-font-color 1px;
 }
 
 .recentAct {
     grid-area: recentAct;
+    border: solid $primary-font-color 1px;
 }
 
 .messageUser {
     grid-area: messageUser;
+    border: solid $primary-font-color 1px;
 }
 
 .settings {
     grid-area: settings;
+    border: solid $primary-font-color 1px;
 }

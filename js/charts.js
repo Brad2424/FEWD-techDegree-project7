@@ -5,10 +5,10 @@ const mobileUsers = document.getElementById("mobileUsers");
 let myCharts = new Chart(traffic, {
     type: 'line',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["January", "February", "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'Novemebr', 'December'],
         datasets: [{
-            label: 'TRAFFIC',
-            data: [12, 19, 3, 5, 2, 3],
+            // label: false,
+            data: [1300, 1000, 1100, 900, 2000, 1500, 1600, 800, 1200, 1800, 1300, 1000],
             backgroundColor: [
                 'rgba(116, 119, 191, 0.2)',
             ],
@@ -18,17 +18,13 @@ let myCharts = new Chart(traffic, {
             borderWidth: 1,
             lineTension: 0,
             pointBackgroundColor: 'white',
-            pointRadius: '5',
+            pointRadius: '4',
         }],
     },
     options: {
         responsive: true,
         maintainAspectRatio: false,
         responsiveAnimationDuration: 0,
-        title: {
-            display: true,
-            position: 'top',
-            text: 'TITLE',
         scales: {
             yAxes: [{
                 ticks: {
@@ -36,14 +32,13 @@ let myCharts = new Chart(traffic, {
                 }
             }]
         }
-    }
 }
 });
 
 myCharts += new Chart(dailyTraf, {
     type: 'bar',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: ["Monday", 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [{
             label: '# of Votes',
             data: [12, 19, 3, 5, 2, 3],

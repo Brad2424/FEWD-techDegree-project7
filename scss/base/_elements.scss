@@ -8,8 +8,36 @@ a {
 
 h2 {
     display: none;
+    color: $primary-font-color;
+    font-weight: normal;
     @include mq(small) {
         display: initial;
         font-size: 1em;
     }
+}
+
+h3 {
+    margin: 20px 0 0 20px;
+    color: $primary-font-color;
+    font-size: 1em;
+}
+
+.social-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+
+    border: solid 1px $primary-font-color;
+        svg {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.flex-container__social {
+    margin: auto 0;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
