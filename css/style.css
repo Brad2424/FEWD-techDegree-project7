@@ -42,9 +42,9 @@ h3 {
 
 .social-stat {
   flex: 1;
-  display: flex;
-  flex-direction: row-reverse;
-  border: solid 1px #7f7f7f; }
+  border: solid lightgrey 1px; }
+  .social-stat * {
+    display: inline-block; }
   .social-stat svg {
     height: 50px;
     width: 50px; }
@@ -87,35 +87,35 @@ main {
 
 .traffic {
   grid-area: traffic;
-  border: solid #7f7f7f 1px; }
+  border: solid lightgrey 1px; }
 
 .dailyTraf {
   grid-area: dailyTraf;
-  border: solid #7f7f7f 1px; }
+  border: solid lightgrey 1px; }
 
 .mobileUsers {
   grid-area: mobileUsers;
-  border: solid #7f7f7f 1px; }
+  border: solid lightgrey 1px; }
 
 .socialStats {
   grid-area: socialStats;
-  border: solid #7f7f7f 1px; }
+  border: solid lightgrey 1px; }
 
 .newMemb {
   grid-area: newMemb;
-  border: solid #7f7f7f 1px; }
+  border: solid lightgrey 1px; }
 
 .recentAct {
   grid-area: recentAct;
-  border: solid #7f7f7f 1px; }
+  border: solid lightgrey 1px; }
 
 .messageUser {
   grid-area: messageUser;
-  border: solid #7f7f7f 1px; }
+  border: solid lightgrey 1px; }
 
 .settings {
   grid-area: settings;
-  border: solid #7f7f7f 1px; }
+  border: solid lightgrey 1px; }
 
 .alert-div {
   background-color: #7477bf;

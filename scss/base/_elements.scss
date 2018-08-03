@@ -24,10 +24,10 @@ h3 {
 
 .social-stat {
     flex: 1;
-    display: flex;
-    flex-direction: row-reverse;
-
-    border: solid 1px $primary-font-color;
+    * {
+        display: inline-block;
+    }
+    border: solid lightgrey 1px;
         svg {
         height: 50px;
         width: 50px;
