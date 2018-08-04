@@ -4,3 +4,15 @@
     padding: 10px;
     overflow: hidden;
 }
+
+%button {
+    border-radius: 5px;
+    background: $primary-color;
+    border: $primary-color solid 1px;
+    padding: 10px;
+    overflow: hidden;
+    color: $secondary-font-color;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.2em;
+}

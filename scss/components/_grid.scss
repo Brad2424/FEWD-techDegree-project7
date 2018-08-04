@@ -41,10 +41,12 @@
 
 header {
     grid-area: header;
+    border-bottom: solid lightgrey 2px;
 }
 
 nav {
     grid-area: nav;
+    border-right: solid lightgrey 2px;
 }
 
 main {
@@ -53,40 +55,53 @@ main {
 
 .traffic {
     grid-area: traffic;
-    border: solid lightgrey 1px;
+    border-top: solid lightgrey 1px;
 }
 
 .dailyTraf {
     grid-area: dailyTraf;
-    border: solid lightgrey 1px;
+    border-top: solid lightgrey 1px;
+    @include mq(small) {
+        border-right: solid lightgrey 1px;
+    }
 }
 
 .mobileUsers {
     grid-area: mobileUsers;
-    border: solid lightgrey 1px;
+    border-top: solid lightgrey 1px;
 }
 
 .socialStats {
     grid-area: socialStats;
-    border: solid lightgrey 1px;
+    border-top: solid lightgrey 1px;
+    display: flex;
+    flex-direction: column;
 }
 
 .newMemb {
     grid-area: newMemb;
-    border: solid lightgrey 1px;
+    border-top: solid lightgrey 1px;
+    @include mq(small) {
+        border-right: solid lightgrey 1px;
+    }
 }
 
 .recentAct {
     grid-area: recentAct;
-    border: solid lightgrey 1px;
+    border-top: solid lightgrey 1px;
 }
 
 .messageUser {
     grid-area: messageUser;
-    border: solid lightgrey 1px;
+    display: flex;
+    flex-direction: column;
+    border-top: solid lightgrey 1px;
+    @include mq(small) {
+        border-right: solid lightgrey 1px;
+    }
 }
 
 .settings {
     grid-area: settings;
-    border: solid lightgrey 1px;
+    border-top: solid lightgrey 1px;
 }

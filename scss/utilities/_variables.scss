@@ -1,9 +1,11 @@
 // ----- BACKGROUND COLORS ------ //
 $primary-color: rgb(116, 119, 191);
 $secondary-color: rgb(77, 76, 114);
-// ----- FONT COLORS ------ //
+// ----- TYPOGRAPHY ------ //
 $primary-font-color: rgb(127,127,127);
 $secondary-font-color: white;
+$primary-font: serif;
+$secondary-font: sans-serif;
 // ----- LAYOUT ------ //
 $sectionGap: 20px;
 $sectionHeight: 300px;
@@ -11,3 +13,4 @@ $sectionHeight: 300px;
 $breakpoint-sml: 485px;
 $breakpoint-med: 768px;
 $breakpoint-lrg: 1024px;
+$breakpoint-xlrg: 1300px;

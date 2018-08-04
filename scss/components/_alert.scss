@@ -12,10 +12,10 @@
         }
         p {
             display: inline;
-            font-size: 0.8em;
+            font-size: 0.7em;
             margin: 5px;
             @include mq(medium) {
-                font-size: 1em;
+                font-size: 0.9em;
             } 
         }
         button {
@@ -29,5 +29,6 @@
         .alert {
             font-size: 1.2em;
             margin-right: 30px;
+            font-family: $primary-font;
         }
 }

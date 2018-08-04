@@ -8,7 +8,7 @@ let myCharts = new Chart(traffic, {
         labels: ["January", "February", "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'Novemebr', 'December'],
         datasets: [{
             // label: false,
-            data: [1300, 1000, 1100, 900, 2000, 1500, 1600, 800, 1200, 1800, 1300, 1000],
+            data: [700, 1200, 1100, 1200, 2000, 1500, 1600, 1100, 1200, 1800, 1300, 1600],
             backgroundColor: [
                 'rgba(116, 119, 191, 0.2)',
             ],

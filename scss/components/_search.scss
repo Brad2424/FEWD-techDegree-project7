@@ -3,10 +3,11 @@
     flex-direction: row-reverse;
     justify-content: center;
     height: 60px;
-    border: lightgrey 1px solid;
+    border-bottom: lightgrey 2px solid;
     @include mq(small) {
         float: right;
         width: 70%;
+        border-left: lightgrey 2px solid;
     }
     @include mq(medium) {
         justify-content: initial;
