@@ -1,10 +1,10 @@
-const returnedData = $.ajax({
-                url: 'https://randomuser.me/api/?results=4&inc=name,email,registered,picture',
-                dataType: 'json',
-                success: function(data) {
-                    data = JSON.parse(data);
-                }
-            });
+// const returnedData = $.ajax({
+//                 url: 'https://randomuser.me/api/?results=4&inc=name,email,registered,picture',
+//                 dataType: 'json',
+//                 success: function(data) {
+//                     data = JSON.parse(data);
+//                 }
+//             });
 
 
 // const randomPicture1 = results

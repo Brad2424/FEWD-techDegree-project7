@@ -1,0 +1,64 @@
+button.switch {
+    border-radius: 30px;
+    border: 1px solid $primary-font-color;
+    display: inline-flex;
+    padding: 2px;
+    background: $primary-color;
+    font-size: 0.9em;
+    margin-right: 20px;
+    span {
+        padding: 5px 0;
+        color:$secondary-font-color;
+        display: inline-block;
+        margin: auto 0;
+        font-weight: 600;
+    }
+    #switchCircle {
+        border-radius: 50%;
+        width: 29px;
+        height: 29px;
+        background: $secondary-font-color;
+        position: relative;
+        left: 29px;
+    }
+}
+
+label.switch {
+    margin-left: 20px;
+    margin-right: auto;
+    color: $primary-font-color;
+    font-size: 0.8em;
+    cursor: pointer;
+    @include mq(small) {
+        font-size: 0.9em;
+    }
+}
+
+select {
+    width: 90%;
+    max-height: 28px;
+    flex: 1;
+    align-self: center;
+    border-radius: 5px;
+    color: $primary-font-color;
+    margin-top: auto;
+}
+.settings button {
+    @extend %button;
+    align-self: center;
+}
+#cancel {
+    background: $primary-font-color;
+    border-color: $primary-font-color;
+}
+
+.settings :last-child {
+    justify-content: center;
+    button {
+        margin: 10px;
+    }
+}
+
+[disabled] {
+    color: $primary-font-color;
+}

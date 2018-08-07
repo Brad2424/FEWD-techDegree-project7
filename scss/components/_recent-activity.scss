@@ -1,0 +1,50 @@
+.recentAct {
+    div:nth-child(n+3) {
+        border-top: solid lightgrey 1px;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        width: 95%;
+        height: 42px;
+        margin: 0 auto;
+        @include mq(small) {
+            height: 65px;
+        }
+        * {
+            font-size: 0.8em;
+            @include mq(small) {
+                font-size: 0.9em;
+            }
+        }
+    }
+    p {
+        margin-left: 10px;
+        color: $primary-font-color;
+        max-width: 75%;
+    }
+    img {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        @include mq(small) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    a {
+        margin-left: auto;
+        text-decoration: none;
+        transform: rotate(-90deg);
+        font-size: 2em;
+        font-weight: 100;
+        color: $primary-color;
+        @include mq(small) {
+            font-size: 2.5em;
+            font-weight: 100;
+        }
+    }
+}
+#activityTime {
+    color: $primary-color;
+}

@@ -11,6 +11,10 @@
             grid-template-columns: 60px 1fr;
             grid-template-rows: 60px 1fr;
         }
+        @include mq(medium) {
+            grid-template-columns: 70px 1fr;
+            grid-template-rows: 70px 1fr;
+        }
     }
 
     &main {
@@ -104,4 +108,12 @@ main {
 .settings {
     grid-area: settings;
     border-top: solid lightgrey 1px;
+    display: flex;
+    flex-direction: column;
+    div {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        max-height: 60px;
+    }
 }

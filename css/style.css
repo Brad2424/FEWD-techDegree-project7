@@ -4,16 +4,17 @@
   padding: 10px;
   overflow: hidden; }
 
-.messageUser button {
+.messageUser button, .settings button {
   border-radius: 5px;
   background: #7477bf;
   border: #7477bf solid 1px;
   padding: 10px;
   overflow: hidden;
   color: white;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  font-size: 0.9em;
   font-weight: 600;
-  font-size: 1.2em; }
+  cursor: pointer; }
 
 @keyframes jingle {
   20% {
@@ -49,13 +50,21 @@ h2 {
       font-size: 1.2em; } }
 
 h3 {
-  margin: 20px 0 0 20px;
+  margin: 10px 0px 5px 20px;
   color: #7f7f7f;
-  font-size: 1em;
-  font-family: serif; }
+  font-size: 0.7em;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: normal; }
+  @media (min-width: 485px) {
+    h3 {
+      margin: 10px 0 0 20px; } }
   @media (min-width: 768px) {
     h3 {
-      font-size: 1.1em; } }
+      font-size: 0.9em; } }
+  @media (min-width: 1024px) {
+    h3 {
+      margin: 10px 0 15px 20px; } }
 
 .grid-container__page {
   display: grid;
@@ -66,6 +75,10 @@ h3 {
     .grid-container__page {
       grid-template-columns: 60px 1fr;
       grid-template-rows: 60px 1fr; } }
+  @media (min-width: 768px) {
+    .grid-container__page {
+      grid-template-columns: 70px 1fr;
+      grid-template-rows: 70px 1fr; } }
 .grid-container__main {
   margin-top: 20px;
   display: grid;
@@ -131,7 +144,14 @@ main {
 
 .settings {
   grid-area: settings;
-  border-top: solid lightgrey 1px; }
+  border-top: solid lightgrey 1px;
+  display: flex;
+  flex-direction: column; }
+  .settings div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-height: 60px; }
 
 .alert-div {
   background-color: #7477bf;
@@ -155,7 +175,7 @@ main {
     border: #7477bf solid 1px;
     font-size: 1.7em;
     padding: 0;
-    margin: 5px;
+    margin-right: 5px;
     margin-left: auto;
     cursor: pointer; }
   .alert-div .alert {
@@ -164,7 +184,7 @@ main {
     font-family: serif; }
 
 nav {
-  background-color: #4d4c72; }
+  background-color: #383b83; }
   nav img {
     width: 25px;
     height: 25px;
@@ -172,8 +192,8 @@ nav {
     margin: 20px auto; }
     @media (min-width: 485px) {
       nav img {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         margin: 30px auto; } }
 
 header {
@@ -286,6 +306,10 @@ header {
 .messageUser button {
   width: 90%;
   margin: 10px auto; }
+.messageUser p {
+  text-align: center;
+  margin: 5px 0 0 0;
+  color: green; }
 
 #message {
   height: 60%; }
@@ -312,7 +336,7 @@ header {
   .social-stat P {
     font-size: 1.5em;
     margin: 0;
-    color: #7477bf; }
+    color: #7f7f7f; }
     @media (min-width: 485px) {
       .social-stat P {
         font-size: 2em; } }
@@ -322,7 +346,7 @@ header {
   .social-stat h4 {
     font-size: 1em;
     margin: 0;
-    color: #4d4c72;
+    color: #383b83;
     font-weight: normal; }
     @media (min-width: 485px) {
       .social-stat h4 {
@@ -356,5 +380,138 @@ header {
   @media (min-width: 485px) {
     .flex-container__social {
       margin: 30px 0; } }
+
+.newMemb div:nth-child(n+3) {
+  border-top: solid lightgrey 1px; }
+.newMemb div {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 40px;
+  margin: 0 auto; }
+  @media (min-width: 485px) {
+    .newMemb div {
+      height: 65px; } }
+  .newMemb div * {
+    font-size: 0.8em; }
+    @media (min-width: 485px) {
+      .newMemb div * {
+        font-size: 0.9em; } }
+.newMemb p {
+  margin-left: 10px;
+  color: #7f7f7f; }
+.newMemb img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px; }
+  @media (min-width: 485px) {
+    .newMemb img {
+      width: 40px;
+      height: 40px; } }
+
+#dateRegistered {
+  margin-left: auto; }
+
+#email {
+  color: #7477bf; }
+
+.recentAct div:nth-child(n+3) {
+  border-top: solid lightgrey 1px; }
+.recentAct div {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 42px;
+  margin: 0 auto; }
+  @media (min-width: 485px) {
+    .recentAct div {
+      height: 65px; } }
+  .recentAct div * {
+    font-size: 0.8em; }
+    @media (min-width: 485px) {
+      .recentAct div * {
+        font-size: 0.9em; } }
+.recentAct p {
+  margin-left: 10px;
+  color: #7f7f7f;
+  max-width: 75%; }
+.recentAct img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px; }
+  @media (min-width: 485px) {
+    .recentAct img {
+      width: 40px;
+      height: 40px; } }
+.recentAct a {
+  margin-left: auto;
+  text-decoration: none;
+  transform: rotate(-90deg);
+  font-size: 2em;
+  font-weight: 100;
+  color: #7477bf; }
+  @media (min-width: 485px) {
+    .recentAct a {
+      font-size: 2.5em;
+      font-weight: 100; } }
+
+#activityTime {
+  color: #7477bf; }
+
+button.switch {
+  border-radius: 30px;
+  border: 1px solid #7f7f7f;
+  display: inline-flex;
+  padding: 2px;
+  background: #7477bf;
+  font-size: 0.9em;
+  margin-right: 20px; }
+  button.switch span {
+    padding: 5px 0;
+    color: white;
+    display: inline-block;
+    margin: auto 0;
+    font-weight: 600; }
+  button.switch #switchCircle {
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    background: white;
+    position: relative;
+    left: 29px; }
+
+label.switch {
+  margin-left: 20px;
+  margin-right: auto;
+  color: #7f7f7f;
+  font-size: 0.8em;
+  cursor: pointer; }
+  @media (min-width: 485px) {
+    label.switch {
+      font-size: 0.9em; } }
+
+select {
+  width: 90%;
+  max-height: 28px;
+  flex: 1;
+  align-self: center;
+  border-radius: 5px;
+  color: #7f7f7f;
+  margin-top: auto; }
+
+.settings button {
+  align-self: center; }
+
+#cancel {
+  background: #7f7f7f;
+  border-color: #7f7f7f; }
+
+.settings :last-child {
+  justify-content: center; }
+  .settings :last-child button {
+    margin: 10px; }
+
+[disabled] {
+  color: #7f7f7f; }
 
 /*# sourceMappingURL=style.css.map */

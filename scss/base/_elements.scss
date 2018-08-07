@@ -19,11 +19,19 @@ h2 {
 }
 
 h3 {
-    margin: 20px 0 0 20px;
+    margin: 10px 0px 5px 20px;
     color: $primary-font-color;
-    font-size: 1em;
-    font-family: $primary-font;
+    font-size: 0.7em;
+    font-family: $secondary-font;
+    text-transform: uppercase;
+    font-weight: normal;
+    @include mq(small) {
+        margin: 10px 0 0 20px;
+    }
     @include mq(medium) {
-        font-size: 1.1em;
+        font-size: 0.9em;
+    }
+    @include mq(large) {
+        margin: 10px 0 15px 20px;
     }
 }

@@ -13,7 +13,7 @@ let myCharts = new Chart(traffic, {
                 'rgba(116, 119, 191, 0.2)',
             ],
             borderColor: [
-                'rgba(116, 119, 191, 1)'
+                'rgba(116, 119, 191, 1)',
             ],
             borderWidth: 1,
             lineTension: 0,

@@ -1,0 +1,42 @@
+.newMemb {
+    div:nth-child(n+3) {
+        border-top: solid lightgrey 1px;
+    }
+    div {
+        display: flex;
+        align-items: center;
+        width: 95%;
+        height: 40px;
+        margin: 0 auto;
+        @include mq(small) {
+            height: 65px;
+        }
+        * {
+            font-size: 0.8em;
+            @include mq(small) {
+                font-size: 0.9em;
+            }
+        }
+    }
+    p {
+        margin-left: 10px;
+        color: $primary-font-color;
+
+    }
+    img {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        @include mq(small) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+#dateRegistered {
+    margin-left: auto;
+}
+#email {
+    color: $primary-color;
+}
