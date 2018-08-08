@@ -478,7 +478,8 @@ button.switch {
     height: 29px;
     background: white;
     position: relative;
-    left: 29px; }
+    left: 29px;
+    transition: 0.1s ease; }
 
 label.switch {
   margin-left: 20px;

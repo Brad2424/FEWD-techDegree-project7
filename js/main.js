@@ -21,38 +21,37 @@ sendButton.addEventListener('click', (e) => {
 
     const parentDiv = document.querySelector('.messageUser');
     const message = document.querySelector('#message');
+    const user = document.querySelector('#user');
 
     let timeOut;
-    
     function startTimeOut() {
         timeOut = window.setTimeout(() => {sentStatus.remove()}, 3000);
     };
-
     function stopTimeOut() {
         window.clearTimeout(timeOut);
     };
 
-    if (sentStatus !== null && message.value === "" && sentStatus.textContent === "Message Successfully Sent") {
-        const timeOut = window.setTimeout(() => {sentStatus.remove()}, 3000);
-        sentStatus.textContent = "Error: No message entered";
+    if (sentStatus !== null && sentStatus.textContent === "Message Successfully Sent"  && message.value === "" || sentStatus !== null && sentStatus.textContent === "Message Successfully Sent"  && user.value === "") {
+        sentStatus.textContent = "Error: No Message/User Entered";
         sentStatus.style.color = "red";
         stopTimeOut();
-    } else if (sentStatus !== null && message.value && sentStatus.textContent === "Error: No message entered") {
-        const timeOut = window.setTimeout(() => {sentStatus.remove()}, 3000);
+    } else if (sentStatus !== null && sentStatus.textContent === "Error: No Message/User Entered" && message.value && user.value) {
         sentStatus.textContent = "Message Successfully Sent";
         sentStatus.style.color = "green";
         startTimeOut();
         message.value = "";
-    } else if(message.value === "" && sentStatus === null) {
+        user.value = "";
+
+    } else if(sentStatus === null && message.value === "" || sentStatus === null && user.value === "") {
         parentDiv.insertBefore(sendConfirmation, e.target);
-        sendConfirmation.textContent = "Error: No message entered";
+        sendConfirmation.textContent = "Error: No Message/User Entered";
         sendConfirmation.style.color = "red";
-    } else if(message.value && sentStatus === null) {
-        const timeOut = window.setTimeout(() => {sentStatus.remove()}, 3000);
+    } else if(sentStatus === null && message.value && user.value) {
         parentDiv.insertBefore(sendConfirmation, e.target);
         sendConfirmation.textContent = "Message Successfully Sent";
         startTimeOut();
         message.value = "";
+        user.value = "";
     };
 });
 
@@ -71,7 +70,7 @@ function handleClickEvent(e) {
     if (e.target.getAttribute("aria-checked") == "true") {
         switchCircle.style.left = "-21px";
         e.target.setAttribute("aria-checked", "false");
-    } else {
+    } else if (e.target.getAttribute("aria-checked") == "false") {
         switchCircle.style.left = "29px";
         e.target.setAttribute("aria-checked", "true");
     }
