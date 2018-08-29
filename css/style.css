@@ -17,6 +17,14 @@
   font-weight: 600;
   cursor: pointer; }
 
+button.switch#publicProfile #switchCircle, button.switch#emailNotifications #switchCircle {
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  background: white;
+  position: relative;
+  transition: 0.1s ease; }
+
 @keyframes jingle {
   20% {
     transform-origin: 50% 0%;
@@ -472,14 +480,13 @@ button.switch {
     display: inline-block;
     margin: auto 0;
     font-weight: 600; }
-  button.switch #switchCircle {
-    border-radius: 50%;
-    width: 29px;
-    height: 29px;
-    background: white;
-    position: relative;
-    left: 29px;
-    transition: 0.1s ease; }
+  button.switch#publicProfile #switchCircle {
+    left: 29px; }
+  button.switch#emailNotifications {
+    background: #ff4b4b;
+    border: #ff4b4b 1px solid; }
+    button.switch#emailNotifications #switchCircle {
+      left: -21px; }
 
 label.switch {
   margin-left: 20px;

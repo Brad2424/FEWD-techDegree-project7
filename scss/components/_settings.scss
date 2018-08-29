@@ -8,19 +8,22 @@ button.switch {
     margin-right: 20px;
     span {
         padding: 5px 0;
-        color:$secondary-font-color;
+        color: $secondary-font-color;
         display: inline-block;
         margin: auto 0;
         font-weight: 600;
     }
-    #switchCircle {
-        border-radius: 50%;
-        width: 29px;
-        height: 29px;
-        background: $secondary-font-color;
-        position: relative;
+    &#publicProfile #switchCircle {
+        @extend %switchCircle;
         left: 29px;
-        transition: 0.1s ease;
+    }
+    &#emailNotifications{
+        background: rgb(255, 75, 75);
+        border: rgb(255, 75, 75) 1px solid;
+            #switchCircle{
+            @extend %switchCircle;
+            left: -21px;
+        }
     }
 }
 
