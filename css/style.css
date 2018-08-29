@@ -1,8 +1,9 @@
 .search-bar-div input, .messageUser input {
   border-radius: 5px;
-  border: lightgray solid 1px;
   padding: 10px;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 90%;
+  border: solid lightgrey 1px; }
 
 .messageUser button, .settings button {
   border-radius: 5px;
@@ -84,11 +85,16 @@ h3 {
   display: grid;
   grid-template-rows: repeat(8, 200px);
   grid-template-areas: "traffic" "dailyTraf" "mobileUsers" "socialStats" "newMemb" "recentAct" "messageUser" "settings"; }
+  .grid-container__main > div {
+    border-top: solid lightgrey 1px; }
   @media (min-width: 485px) {
     .grid-container__main {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(5, 300px);
       grid-template-areas: "traffic traffic" "dailyTraf mobileUsers" "socialStats socialStats" "newMemb recentAct" "messageUser settings"; } }
+
+main {
+  grid-area: main; }
 
 header {
   grid-area: header;
@@ -98,57 +104,47 @@ nav {
   grid-area: nav;
   border-right: solid lightgrey 2px; }
 
-main {
-  grid-area: main; }
-
 .traffic {
-  grid-area: traffic;
-  border-top: solid lightgrey 1px; }
+  grid-area: traffic; }
 
 .dailyTraf {
-  grid-area: dailyTraf;
-  border-top: solid lightgrey 1px; }
+  grid-area: dailyTraf; }
   @media (min-width: 485px) {
     .dailyTraf {
       border-right: solid lightgrey 1px; } }
 
 .mobileUsers {
-  grid-area: mobileUsers;
-  border-top: solid lightgrey 1px; }
+  grid-area: mobileUsers; }
 
 .socialStats {
   grid-area: socialStats;
-  border-top: solid lightgrey 1px;
   display: flex;
   flex-direction: column; }
 
 .newMemb {
-  grid-area: newMemb;
-  border-top: solid lightgrey 1px; }
+  grid-area: newMemb; }
   @media (min-width: 485px) {
     .newMemb {
       border-right: solid lightgrey 1px; } }
 
 .recentAct {
-  grid-area: recentAct;
-  border-top: solid lightgrey 1px; }
+  grid-area: recentAct; }
 
 .messageUser {
   grid-area: messageUser;
   display: flex;
-  flex-direction: column;
-  border-top: solid lightgrey 1px; }
+  flex-direction: column; }
   @media (min-width: 485px) {
     .messageUser {
       border-right: solid lightgrey 1px; } }
 
 .settings {
   grid-area: settings;
-  border-top: solid lightgrey 1px;
   display: flex;
   flex-direction: column; }
   .settings div {
     display: flex;
+    flex-direction: row;
     align-items: center;
     flex: 1;
     max-height: 60px; }
@@ -156,6 +152,7 @@ main {
 .alert-div {
   background-color: #7477bf;
   display: flex;
+  flex-direction: row;
   align-items: center;
   width: 95%;
   border: #7477bf solid 1px;
@@ -199,6 +196,7 @@ nav {
 header {
   background-color: #7477bf;
   display: flex;
+  flex-direction: row;
   align-items: center; }
   header * {
     color: white; }
@@ -226,6 +224,7 @@ header {
         font-size: 1.8em; } }
   header a {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     border-right: solid lightgrey 1px; }
   header .notification {
@@ -253,13 +252,13 @@ header {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  height: 60px;
-  border-bottom: lightgrey 2px solid; }
+  border-bottom: solid lightgrey 2px;
+  height: 60px; }
   @media (min-width: 485px) {
     .search-bar-div {
       float: right;
       width: 70%;
-      border-left: lightgrey 2px solid; } }
+      border-left: solid lightgrey 2px; } }
   @media (min-width: 768px) {
     .search-bar-div {
       justify-content: initial;
@@ -269,8 +268,7 @@ header {
       width: 85%; } }
 
 .search-bar-div input {
-  margin: auto;
-  width: 90%; }
+  margin: auto; }
   @media (min-width: 768px) {
     .search-bar-div input {
       width: 70%;
@@ -281,10 +279,11 @@ header {
   @media (min-width: 485px) {
     .tab-div {
       display: inline-flex;
-      width: 30%;
-      height: 60px;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
+      width: 30%;
+      height: 60px;
       font-size: 1.1em; } }
   @media (min-width: 768px) {
     .tab-div {
@@ -301,8 +300,7 @@ header {
   margin: 0 auto; }
 
 .messageUser input {
-  margin: 10px auto 0 auto;
-  width: 90%; }
+  margin: 10px auto 0 auto; }
 .messageUser button {
   width: 90%;
   margin: 10px auto; }
@@ -320,6 +318,7 @@ header {
   border-radius: 5px;
   width: 250px;
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: center; }
   @media (min-width: 768px) {
@@ -374,9 +373,10 @@ header {
 .flex-container__social {
   height: 50%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+  flex-wrap: wrap; }
   @media (min-width: 485px) {
     .flex-container__social {
       margin: 30px 0; } }
@@ -460,7 +460,7 @@ header {
 
 button.switch {
   border-radius: 30px;
-  border: 1px solid #7f7f7f;
+  border: solid #7f7f7f 1px;
   display: inline-flex;
   padding: 2px;
   background: #7477bf;

@@ -1,6 +1,6 @@
 .newMemb {
     div:nth-child(n+3) {
-        border-top: solid lightgrey 1px;
+        @include border($side: -top);
     }
     div {
         display: flex;

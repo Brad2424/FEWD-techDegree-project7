@@ -1,7 +1,6 @@
 .alert-div {
     background-color: $primary-color;
-    display: flex;
-    align-items: center;
+    @include flexy($dir: row, $alignItems: center);
     width: 95%;
     border: $primary-color solid 1px;
     border-radius: 5px;

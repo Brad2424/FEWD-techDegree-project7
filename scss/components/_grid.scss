@@ -1,4 +1,4 @@
-
+// this grid is for overall page layout
 .grid-container__ {
     &page {
         display: grid;
@@ -16,7 +16,7 @@
             grid-template-rows: 70px 1fr;
         }
     }
-
+// this grid is for graph section 
     &main {
         margin-top: 20px;
         display: grid;
@@ -30,6 +30,11 @@
             "recentAct"
             "messageUser"
             "settings";
+
+            > div { // selects all grid area divs
+                @include border($side: -top);
+             }
+
             @include mq(small) {
                 grid-template-columns: 1fr 1fr;
                 grid-template-rows: repeat(5, 300px);
@@ -43,76 +48,64 @@
         }
 }
 
+// grid areas for overall page layout
+main {
+    grid-area: main;
+}
 header {
     grid-area: header;
     border-bottom: solid lightgrey 2px;
 }
-
 nav {
     grid-area: nav;
     border-right: solid lightgrey 2px;
 }
 
-main {
-    grid-area: main;
-}
-
+// grid areas for graph section
 .traffic {
     grid-area: traffic;
-    border-top: solid lightgrey 1px;
 }
 
 .dailyTraf {
     grid-area: dailyTraf;
-    border-top: solid lightgrey 1px;
     @include mq(small) {
-        border-right: solid lightgrey 1px;
+        @include border($side: -right);
     }
 }
 
 .mobileUsers {
     grid-area: mobileUsers;
-    border-top: solid lightgrey 1px;
 }
 
 .socialStats {
     grid-area: socialStats;
-    border-top: solid lightgrey 1px;
-    display: flex;
-    flex-direction: column;
+    @include flexy();
 }
 
 .newMemb {
     grid-area: newMemb;
-    border-top: solid lightgrey 1px;
     @include mq(small) {
-        border-right: solid lightgrey 1px;
+        @include border($side: -right);
     }
 }
 
 .recentAct {
     grid-area: recentAct;
-    border-top: solid lightgrey 1px;
 }
 
 .messageUser {
     grid-area: messageUser;
-    display: flex;
-    flex-direction: column;
-    border-top: solid lightgrey 1px;
+    @include flexy();
     @include mq(small) {
-        border-right: solid lightgrey 1px;
+        @include border($side: -right);
     }
 }
 
 .settings {
     grid-area: settings;
-    border-top: solid lightgrey 1px;
-    display: flex;
-    flex-direction: column;
+    @include flexy();
     div {
-        display: flex;
-        align-items: center;
+        @include flexy($dir: row, $alignItems: center);
         flex: 1;
         max-height: 60px;
     }

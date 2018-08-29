@@ -1,13 +1,11 @@
 .search-bar-div {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
+    @include flexy($just: center, $dir: row-reverse);
+    @include border($thick: 2px, $side: -bottom);
     height: 60px;
-    border-bottom: lightgrey 2px solid;
     @include mq(small) {
         float: right;
         width: 70%;
-        border-left: lightgrey 2px solid;
+        @include border($thick: 2px, $side: -left);
     }
     @include mq(medium) {
         justify-content: initial;
@@ -21,7 +19,6 @@
 .search-bar-div input {
     @extend %input;
     margin: auto;
-    width: 90%;
     @include mq(medium) {
         width: 70%;
         margin-right: 20px;
@@ -31,11 +28,9 @@
 .tab-div {
     display: none;
     @include mq(small) {
-        display: inline-flex;
+        @include flexy($disp: inline-flex, $alignItems: center, $just: center, $dir: row);
         width: 30%;
         height: 60px;
-        justify-content: center;
-        align-items: center;
         font-size: 1.1em;
     }
     @include mq(medium) {

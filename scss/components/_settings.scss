@@ -1,6 +1,6 @@
 button.switch {
     border-radius: 30px;
-    border: 1px solid $primary-font-color;
+    @include border($color: $primary-font-color);
     display: inline-flex;
     padding: 2px;
     background: $primary-color;

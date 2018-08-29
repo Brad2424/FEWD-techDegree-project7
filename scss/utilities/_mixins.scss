@@ -1,3 +1,32 @@
+//flexbox
+@mixin flexy($alignItems: null,
+            $just: null,
+            $disp: flex,
+            $dir: column,
+            $wrap: null
+    ){
+    display: $disp;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $alignItems;
+    flex-wrap: $wrap;
+        @content;
+}
+
+//border
+@mixin border(
+    $style: solid,
+    $color: lightgrey,
+    $thick: 1px,
+    $side: null,
+    $radius: null
+    ){
+    border#{$side}: $style $color $thick;
+    border-radius: $radius;
+        @content;
+}
+
+//media queries
 @mixin mq($break) {
     @if $break == null {
         @error "`#{$break}` is not a valid breakpoint name.";

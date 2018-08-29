@@ -1,7 +1,6 @@
 header {
     background-color: $primary-color;
-    display: flex;
-    align-items: center;
+    @include flexy($alignItems: center, $dir: row);
     * {
         color: $secondary-font-color;
     }
@@ -30,9 +29,8 @@ header {
         }
     }
     a {
-        display: flex;
-        justify-content: center;
-        border-right: solid lightgrey 1px;
+        @include flexy($just: center, $dir: row);
+        @include border($side: -right);
     }
     .notification {
         width: 30px;

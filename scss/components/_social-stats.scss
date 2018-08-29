@@ -1,11 +1,8 @@
 .social-stat {
     margin: 5px;
-    border: solid lightgrey 1px;
-    border-radius: 5px;
+    @include border($radius: 5px);
     width: 250px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flexy($dir: row, $just: space-evenly, $alignItems: center);
     @include mq(medium) {
         height: 60%;
     }
@@ -63,10 +60,7 @@
 
 .flex-container__social {
     height: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    @include flexy($dir: row, $just: space-around, $alignItems: center, $wrap: wrap);
         @include mq(small) {
             margin: 30px 0;
         }
