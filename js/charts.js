@@ -14,13 +14,12 @@ const createLineChart = (chartElement, labels, data, yAxis) => {
         data: {
             labels: labels,
             datasets: [{ 
+                label: 'Number of Visits',
                 data: data,
                 borderColor: '#65619E',
                 borderWidth: 1,
                 backgroundColor: 'rgba(116, 119, 191, 0.2)',
-                borderColor: [
-                    'rgba(116, 119, 191, 1)',
-                ],
+                borderColor: 'rgba(116, 119, 191, 1)',
                 borderWidth: 1,
                 lineTension: 0,
                 pointBackgroundColor: 'white',
@@ -41,6 +40,12 @@ const createLineChart = (chartElement, labels, data, yAxis) => {
                         offsetGridLines: true,
                     }
                 }],
+                xAxes: [{
+                    // type: 'time',
+                    time: {
+                        unit: 'month',
+                    }
+                }]
             }
         }
     });
@@ -49,19 +54,30 @@ const createLineChart = (chartElement, labels, data, yAxis) => {
 // ----------------------------------------------------
 // Event listner for GRAPH OPTION BUTTONS on LINE CHART
 // ----------------------------------------------------
-const weeklyButton = document.querySelector("button#weekly");
-const monthlyButton = document.querySelector("button#monthly");
-const quarterlyButton = document.querySelector("button#quarterly");
-const yearlyButton = document.querySelector("button#yearly");
 
-monthlyButton.addEventListener("click", createLineChart(traffic, ["January", "February", "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'Novemebr', 'December'], [700, 1200, 1100, 1200, 2000, 1500, 1600, 1100, 1200, 1800, 1300, 1600], {beginAtZero:true}));
+//Create an graph on page to start with
+createLineChart(traffic, ["January", "February", "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'Novemebr', 'December'], [700, 1200, 1100, 1200, 2000, 1500, 1600, 1100, 1200, 1800, 1300, 1600], {beginAtZero:true});
 
-weeklyButton.addEventListener("click", createLineChart(traffic, ["1", "2", "3", "4", "5", "6", '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'], [100, 150, 120, 130, 160, 180, 170, 190, 170, 180, 160, 190], {beginAtZero:true}));
+const trafficCharts = document.querySelector('.traffic');
 
+trafficCharts.addEventListener('click', (e) => {
+    if (e.target.textContent === 'Weekly') {
+        createLineChart(traffic, ["1", "2", "3", "4", "5", "6", '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29'], [100, 150, 120, 130, 160, 180, 170, 190, 170, 180, 160, 190, 210, 170, 180, 170, 150, 130, 150, 140], {beginAtZero:true})
+    }
 
+    if (e.target.textContent === 'Monthly') {
+        createLineChart(traffic, ["January", "February", "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'Novemebr', 'December'], [700, 1200, 1100, 1200, 2000, 1500, 1600, 1100, 1200, 1800, 1300, 1600], {beginAtZero:true});
+    }
 
+    if (e.target.textContent === 'Quarterly') {
+        createLineChart(traffic, ["January", "February", "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'Novemebr', 'December'], [700, 1200, 1100, 1200, 2000, 1500, 1600, 1100, 1200, 1800, 1300, 1600], {beginAtZero:true});
+    }
 
-// createLineChart(traffic, ["January", "February", "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'Novemebr', 'December'], [700, 1200, 1100, 1200, 2000, 1500, 1600, 1100, 1200, 1800, 1300, 1600], {beginAtZero:true});
+    if (e.target.textContent === 'Yearly') {
+        createLineChart(traffic, ["January", "February", "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'Novemebr', 'December'], [700, 1200, 1100, 1200, 2000, 1500, 1600, 1100, 1200, 1800, 1300, 1600], {beginAtZero:true});
+    }
+});
+
 
 
 // ----------------------------------------------------
@@ -73,7 +89,7 @@ new Chart(dailyTraf, {
     data: {
         labels: ["Monday", 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [{
-            label: '# of Votes',
+            label: 'Number of Visits',
             data: [12, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(56, 59, 131, 1)',

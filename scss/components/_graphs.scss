@@ -5,12 +5,17 @@
         margin: 0 auto;
 }
 
-.traffic button {
+.traffic {
+        .graph-options {
+                text-align: right;
+                width: 85%;
+                margin: 0 auto;
+        }
+        button {
         @extend %button;
         padding: 5px;
         font-weight: 400;
         font-size: 0.8rem;
         text-transform: capitalize;
-        position: relative;
-        left: 75%;
+        }
 }
