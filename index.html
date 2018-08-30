@@ -43,7 +43,7 @@
         </div>
         <div class="alert-div">
            <p class="alert"><strong>Alert</strong></p>
-           <p>Lorem ipsum dolor sit amet, ei nam mundi expetendis suscipiantur, timeam laoreet albucius ea eam.</p>
+           <p>You can close me.</p>
            <button><strong>&times;</strong></button>
         </div>
 
@@ -51,6 +51,10 @@
         <div class="grid-container__main">
             <div class="traffic">
                 <h3>Traffic</h3>
+                <button id="weekly">Weekly</button>
+                <button id="monthly">Monthly</button>
+                <button id="quarterly">Quarterly</button>
+                <button id="yearly">Yearly</button>
                 <div class="graphDiv">
                     <canvas id="traffic"></canvas>
                 </div>
@@ -186,17 +190,17 @@
                 <div>
                     <label for="emailNotifications" class="switch">Send Email Notifications</label>
                     <button role="switch" aria-checked="true" id="emailNotifications" class="switch">
-                        <span id="emailNotifications" class="on">ON</span>
+                        <span id="emailNotifications">ON</span>
                         <span id="switchCircle"></span>
-                        <span id="emailNotifications" class="off">OFF</span>
+                        <span id="emailNotifications">OFF</span>
                     </button>
                 </div>
                 <div>
                     <label for="publicProfile" class="switch">Set Profile to Public</label>
                     <button role="switch" aria-checked="true" id="publicProfile" class="switch">
-                        <span id="publicProfile" class="on">ON</span>
+                        <span id="publicProfile">ON</span>
                         <span id="switchCircle"></span>
-                        <span id="publicProfile" class="off">OFF</span>
+                        <span id="publicProfile">OFF</span>
                     </button>
                 </div>
                 <select name="timeZone" id="timeZone">

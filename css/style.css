@@ -5,7 +5,7 @@
   width: 90%;
   border: solid lightgrey 1px; }
 
-.messageUser button, .settings button {
+.traffic button, .messageUser button, .settings button {
   border-radius: 5px;
   background: #7477bf;
   border: #7477bf solid 1px;
@@ -304,8 +304,16 @@ header {
 .graphDiv {
   position: relative;
   width: 95%;
-  height: 80%;
+  height: 75%;
   margin: 0 auto; }
+
+.traffic button {
+  padding: 5px;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  position: relative;
+  left: 75%; }
 
 .messageUser input {
   margin: 10px auto 0 auto; }
