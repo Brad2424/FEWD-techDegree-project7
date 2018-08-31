@@ -17,12 +17,12 @@
                 font-size: 0.9em;
             } 
         }
+        //close button
         button {
-            border: $primary-color solid 1px;
-            font-size: 1.7em;
-            padding: 0;
-            margin-right: 5px;
-            margin-left: auto;
+            @include border($color: white, $thick: 2px, $radius: 5px);
+            font-size: 1.2em;
+            padding: 0 5px;
+            margin: 2px 5px 2px auto;
             cursor: pointer;
         }
         .alert {

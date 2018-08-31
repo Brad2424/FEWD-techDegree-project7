@@ -1,6 +1,6 @@
-                    // -----------------------------------------------------//
-                    // ----- Event listner for ALERT SECTION sectionk ----- //
-                    // -----------------------------------------------------//
+// -----------------------------------------------------//
+// ----- Event listner for ALERT SECTION sectionk ----- //
+// -----------------------------------------------------//
 
 const alertButton = document.querySelector('.alert-div button');
 const sendButton = document.getElementById('send');
@@ -10,9 +10,9 @@ alertButton.addEventListener('click', () => {
     alertDiv.remove();
 });
 
-                    // ---------------------------------------------------//
-                    // ----- Event listner for MESSAGE USER section ----- //
-                    // ---------------------------------------------------//
+// ---------------------------------------------------//
+// ----- Event listner for MESSAGE USER section ----- //
+// ---------------------------------------------------//
 
 const sentStatus = document.createElement("p");
 const parentDiv = document.querySelector('.messageUser');
@@ -56,9 +56,9 @@ sendButton.addEventListener('click', (e) => {
     };
 });
 
-                    // -----------------------------------------------//
-                    // ----- Event listner for SETTINGS section ----- //
-                    // -----------------------------------------------//
+// -----------------------------------------------//
+// ----- Event listner for SETTINGS section ----- //
+// -----------------------------------------------//
 
 document.querySelectorAll(".switch").forEach(function(theSwitch) {
     theSwitch.addEventListener("click", handleClickEvent, false);
@@ -80,3 +80,33 @@ function handleClickEvent(e) {
         switchCircle.parentNode.style.border = 'rgb(116, 119, 191) 1px solid';
     }
 };
+
+// -----------------------------------------------//
+// ----- Notifications Dropdown Menu --------------
+// -----------------------------------------------//
+
+const dropDownNotifications = document.querySelector('.notificationDropDown');
+const notificationBadge = document.querySelector('.notification-badge');
+
+// Callback function to display dropdown menu
+function dropDown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+    notificationBadge.remove();
+}
+
+// When the user clicks the notifictaion SVG
+dropDownNotifications.addEventListener('click', dropDown);
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (event.target.tagName !== "A" && event.target.parentNode.tagName !== "A") {
+
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}

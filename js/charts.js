@@ -9,7 +9,7 @@ const mobileUsers = document.getElementById("mobileUsers");
 // --------------------------------------------------
 
 const createLineChart = (chartElement, labels, data) => {
-    new Chart(chartElement, {
+    lineChart = new Chart(chartElement, {
         type: 'line',
         data: {
             labels: labels,
@@ -56,18 +56,22 @@ createLineChart(traffic, ["1", "2", "3", "4", "5", "6", '7', '8', '9', '10', '11
 
 trafficCharts.addEventListener('click', (e) => {
     if (e.target.textContent === 'Weekly') {
+        lineChart.destroy();
         createLineChart(traffic, ["1", "2", "3", "4", "5", "6", '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52'], [100, 150, 120, 130, 160, 180, 170, 190, 170, 180, 160, 190, 210, 170, 180, 170, 150, 130, 150, 140, 160, 190, 180, 150, 170, 200, 190, 210, 190, 170, 160, 180, 170, 220, 170, 200,  190, 200, 210, 180, 190, 170, 160, 150, 120, 140, 180, 160, 200, 210, 220, 210]);
     }
 
     if (e.target.textContent === 'Monthly') {
+        lineChart.destroy();
         createLineChart(traffic, ["January", "February", "March", "April", "May", "June", 'July', 'August', 'September', 'October', 'Novemebr', 'December'], [700, 1200, 1100, 1200, 2000, 1500, 1600, 1100, 1200, 1800, 1300, 1600]);
     }
 
     if (e.target.textContent === 'Quarterly') {
+        lineChart.destroy();
         createLineChart(traffic, ["Q1", "Q2", "Q3", "Q4"], [3700, 3000, 3800, 3200]);
     }
 
     if (e.target.textContent === 'Yearly') {
+        lineChart.destroy();
         createLineChart(traffic, ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'], [10700, 9200, 11100, 12000, 20000, 15000, 16000, 19000, 19800]);
     }
 });
