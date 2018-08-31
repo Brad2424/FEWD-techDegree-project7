@@ -76,8 +76,9 @@ h3 {
       margin: 10px 0 15px 20px; } }
 
 span.try-me {
-  color: #aa009c;
+  color: #0000c5;
   text-transform: uppercase;
+  font-style: italic;
   font-weight: bold; }
 
 .grid-container__page {
@@ -321,6 +322,14 @@ header {
   font-weight: 400;
   font-size: 0.8rem;
   text-transform: capitalize; }
+.traffic .graphDiv {
+  position: relative;
+  width: 95%;
+  height: 65%;
+  margin: 0 auto; }
+  @media (min-width: 485px) {
+    .traffic .graphDiv {
+      height: 75%; } }
 
 .messageUser input {
   margin: 10px auto 0 auto; }
