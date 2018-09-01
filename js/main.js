@@ -1,5 +1,67 @@
 // -----------------------------------------------------//
-// ----- Event listner for ALERT SECTION sectionk ----- //
+// AJAX request for random users ------------------------
+// -----------------------------------------------------//
+
+function addMembers() {
+    $.ajax({
+    url: 'https://randomuser.me/api/?results=4&nat=nz&inc=name,email,registered,picture',
+    dataType: 'json',
+    success: function(data) {
+        members = data.results
+        console.log(members);
+        addUsersToPage()
+        }
+    });
+}
+
+addMembers();
+
+//Helpers --------------------------------------
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+const possibleActivities = ["liked", "shared", "commented on"]
+const possiblePosts = ["Your Apps SEO Tips", "Future of Asynchronous Programming", "Why Is Coding Addictive", "Bradley Murchison Aquires Facebook"];
+
+const memberDivs = document.getElementsByClassName('member');
+const activityDivs = document.getElementsByClassName('recentActivity');
+
+function addUsersToPage() {
+
+    for (let i = 0; i < memberDivs.length; i++) {
+        const member = memberDivs[i];
+        
+        member.innerHTML = `
+                            <img class="picture" src ="${members[i].picture.thumbnail}" alt="User profile picture">
+                            <p class="name">${members[i].name.first} ${members[i].name.last}<br>
+                                <span class="email">${members[i].email}</span>
+                            </p>
+                            <p class="dateRegistered">${members[i].registered.date.substring(0,10)}</p>
+                            `
+    }
+
+    for (let i = 0; i < activityDivs.length; i++) {
+        const activity = activityDivs[i];
+    
+        activity.innerHTML = `
+                            <img src="${members[i].picture.thumbnail}" alt="User profile picture">
+                            <p>
+                                <span class="name">${members[i].name.first} ${members[i].name.last}</span>
+                                <span class="activity">${possibleActivities[getRandomInt(0, 3)]} ${possiblePosts[getRandomInt(0, 3)]}</span><br>
+                                <span class="activityTime">${getRandomInt(1, 29)} days ago</span>
+                            </p>
+                            <a href="">v</a>
+                            `
+    }
+}
+
+
+// -----------------------------------------------------//
+// Event listner for ALERT SECTION sectionk -------------
 // -----------------------------------------------------//
 
 const alertButton = document.querySelector('.alert-div button');

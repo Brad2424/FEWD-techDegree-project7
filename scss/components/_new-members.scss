@@ -21,7 +21,16 @@
     p {
         margin-left: 10px;
         color: $primary-font-color;
-
+        &.name {
+            text-transform: capitalize;
+        }
+        &.dateRegistered {
+            margin-left: auto;
+        }
+        .email {
+            color: $primary-color;
+            text-transform: lowercase;
+        }
     }
     img {
         border-radius: 50%;
@@ -32,11 +41,4 @@
             height: 40px;
         }
     }
-}
-
-#dateRegistered {
-    margin-left: auto;
-}
-#email {
-    color: $primary-color;
 }

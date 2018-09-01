@@ -102,11 +102,11 @@ span.try-me {
 .grid-container__main {
   margin-top: 20px;
   display: grid;
-  grid-template-rows: repeat(8, 200px);
+  grid-template-rows: repeat(8, 300px);
   grid-template-areas: "traffic" "dailyTraf" "mobileUsers" "socialStats" "newMemb" "recentAct" "messageUser" "settings"; }
   .grid-container__main > div {
     border-top: solid lightgrey 1px; }
-  @media (min-width: 485px) {
+  @media (min-width: 768px) {
     .grid-container__main {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: repeat(5, 300px);
@@ -491,6 +491,13 @@ header {
 .newMemb p {
   margin-left: 10px;
   color: #7f7f7f; }
+  .newMemb p.name {
+    text-transform: capitalize; }
+  .newMemb p.dateRegistered {
+    margin-left: auto; }
+  .newMemb p .email {
+    color: #7477bf;
+    text-transform: lowercase; }
 .newMemb img {
   border-radius: 50%;
   width: 30px;
@@ -499,12 +506,6 @@ header {
     .newMemb img {
       width: 40px;
       height: 40px; } }
-
-#dateRegistered {
-  margin-left: auto; }
-
-#email {
-  color: #7477bf; }
 
 .recentAct div:nth-child(n+3) {
   border-top: solid lightgrey 1px; }
@@ -526,6 +527,8 @@ header {
   margin-left: 10px;
   color: #7f7f7f;
   max-width: 75%; }
+  .recentAct p .name {
+    text-transform: capitalize; }
 .recentAct img {
   border-radius: 50%;
   width: 30px;
@@ -546,7 +549,7 @@ header {
       font-size: 2.5em;
       font-weight: 100; } }
 
-#activityTime {
+.activityTime {
   color: #7477bf; }
 
 button.switch {
