@@ -61,23 +61,53 @@ sendButton.addEventListener('click', (e) => {
 // -----------------------------------------------//
 
 document.querySelectorAll(".switch").forEach(function(theSwitch) {
-    theSwitch.addEventListener("click", handleClickEvent, false);
+    theSwitch.addEventListener("click", moveSwitchCircle, false);
   });
-  
-function handleClickEvent(e) {
 
-    const switchCircle = e.target.querySelector('#switchCircle');
+function moveSwitchCircle(e) {
 
-    if (e.target.getAttribute("aria-checked") == "true") {
-        switchCircle.style.left = "-21px";
-        e.target.setAttribute("aria-checked", "false");
-        switchCircle.parentNode.style.background = 'rgb(255, 75, 75)';
-        switchCircle.parentNode.style.border = 'rgb(255, 75, 75) 1px solid';
-    } else if (e.target.getAttribute("aria-checked") == "false") {
-        switchCircle.style.left = "29px";
-        e.target.setAttribute("aria-checked", "true");
-        switchCircle.parentNode.style.background = 'rgb(116, 119, 191)';
-        switchCircle.parentNode.style.border = 'rgb(116, 119, 191) 1px solid';
+    // if the e.target is the button itself
+    if (e.target.classList.contains('switch')) {
+        const switchCircle = e.target.querySelector('#switchCircle')
+        if (e.target.getAttribute("aria-checked") == "true") {
+            switchCircle.style.left = "-21px";
+            e.target.setAttribute("aria-checked", "false");
+            e.target.style.background = 'rgb(255, 75, 75)';
+            e.target.style.border = 'rgb(255, 75, 75) 1px solid';
+        } else {
+            switchCircle.style.left = "29px";
+            e.target.setAttribute("aria-checked", "true");
+            e.target.style.background = 'rgb(116, 119, 191)';
+            e.target.style.border = 'rgb(116, 119, 191) 1px solid';
+        } 
+    // if the e.target is ON and OFF spans
+    } else if(e.target.innerHTML === "ON" || e.target.innerHTML == "OFF") {
+        const switchCircle = e.target.parentNode.querySelector('#switchCircle');
+        if (e.target.parentNode.getAttribute("aria-checked") === "true") {
+            switchCircle.style.left = "-21px";
+            e.target.parentNode.setAttribute("aria-checked", "false");
+            switchCircle.parentNode.style.background = 'rgb(255, 75, 75)';
+            switchCircle.parentNode.style.border = 'rgb(255, 75, 75) 1px solid';
+        } else {
+            switchCircle.style.left = "29px";
+            e.target.parentNode.setAttribute("aria-checked", "true");
+            switchCircle.parentNode.style.background = 'rgb(116, 119, 191)';
+            switchCircle.parentNode.style.border = 'rgb(116, 119, 191) 1px solid';
+        }
+    // if the e.target is the switch circle
+    } else {
+        const switchCircle = e.target;
+        if (e.target.parentNode.getAttribute("aria-checked") === "true") {
+            switchCircle.style.left = "-21px";
+            e.target.parentNode.setAttribute("aria-checked", "false");
+            switchCircle.parentNode.style.background = 'rgb(255, 75, 75)';
+            switchCircle.parentNode.style.border = 'rgb(255, 75, 75) 1px solid';
+        } else {
+            switchCircle.style.left = "29px";
+            e.target.parentNode.setAttribute("aria-checked", "true");
+            switchCircle.parentNode.style.background = 'rgb(116, 119, 191)';
+            switchCircle.parentNode.style.border = 'rgb(116, 119, 191) 1px solid';
+        }
     }
 };
 

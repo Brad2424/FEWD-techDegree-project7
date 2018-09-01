@@ -256,14 +256,15 @@ header {
         height: 40px; } }
     header .notification:hover {
       animation: jingle 0.7s ease-out forwards; }
-  header .profile {
+  header img.profile {
+    border: solid white 1px;
     border-radius: 50%;
     width: 35px;
     height: 35px;
     margin-right: 10px;
     margin-left: 10px; }
     @media (min-width: 485px) {
-      header .profile {
+      header img.profile {
         width: 40px;
         height: 40px; } }
 
@@ -570,14 +571,14 @@ button.switch {
     button.switch#emailNotifications #switchCircle {
       left: -21px; }
 
-label.switch {
+label {
   margin-left: 20px;
   margin-right: auto;
   color: #7f7f7f;
   font-size: 0.8em;
   cursor: pointer; }
   @media (min-width: 485px) {
-    label.switch {
+    label {
       font-size: 0.9em; } }
 
 select {

@@ -44,8 +44,8 @@ header {
             animation: jingle 0.7s ease-out forwards;
         }
     }
-    .profile {
-        border-radius: 50%;
+    img.profile {
+        @include border($color: $secondary-font-color, $thick: 1px, $radius: 50%);
         width: 35px;
         height: 35px;
         margin-right: 10px;

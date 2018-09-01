@@ -136,7 +136,7 @@ new Chart(mobileUsers, {
         labels: ["Phones", "Tablets", "Desktop"],
         datasets: [{
             label: 'Number of Visits',
-            data: [12, 19, 3],
+            data: [12, 19, 8],
             backgroundColor: [
                 'rgba(116, 119, 191, 1)',
                 'rgba(56, 59, 131, 1)',
