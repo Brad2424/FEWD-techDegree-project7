@@ -8,8 +8,8 @@ function addMembers() {
     dataType: 'json',
     success: function(data) {
         members = data.results
-        console.log(members);
-        addUsersToPage()
+        addUsersToPage();
+        addUserSearch();
         }
     });
 }
@@ -37,7 +37,7 @@ function addUsersToPage() {
         
         member.innerHTML = `
                             <img class="picture" src ="${members[i].picture.thumbnail}" alt="User profile picture">
-                            <p class="name">${members[i].name.first} ${members[i].name.last}<br>
+                            <p class="userName">${members[i].name.first} ${members[i].name.last}<br>
                                 <span class="email">${members[i].email}</span>
                             </p>
                             <p class="dateRegistered">${members[i].registered.date.substring(0,10)}</p>
@@ -50,7 +50,7 @@ function addUsersToPage() {
         activity.innerHTML = `
                             <img src="${members[i].picture.thumbnail}" alt="User profile picture">
                             <p>
-                                <span class="name">${members[i].name.first} ${members[i].name.last}</span>
+                                <span class="userName">${members[i].name.first} ${members[i].name.last}</span>
                                 <span class="activity">${possibleActivities[getRandomInt(0, 3)]} ${possiblePosts[getRandomInt(0, 3)]}</span><br>
                                 <span class="activityTime">${getRandomInt(1, 29)} days ago</span>
                             </p>
@@ -58,6 +58,42 @@ function addUsersToPage() {
                             `
     }
 }
+
+function addUserSearch() {
+    let users = document.querySelectorAll("span.userName");
+    for (let i = 0; i < users.length; i++) {
+        const userName = users[i].textContent;
+        console.log(userName);
+        
+        $( "#userSearch" ).autocomplete({
+            source: [userName]
+            });
+    }
+}
+
+// -----------------------------------------------------//
+// Grid Areas searchbox function -------------------------
+// -----------------------------------------------------//
+$(document).ready(function($){
+
+    $('.live-search-list>div').each(function(){
+    $(this).attr('data-search-term', $(this).children().first()[0].innerText.toLowerCase());
+    });
+    
+    $('.live-search-box').on('keyup', function(){
+    
+    var searchTerm = $(this).val().toLowerCase();
+    
+        $('.live-search-list>div').each(function(){
+    
+            if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+});
 
 
 // -----------------------------------------------------//

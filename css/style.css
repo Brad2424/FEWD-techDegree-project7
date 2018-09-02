@@ -491,7 +491,7 @@ header {
 .newMemb p {
   margin-left: 10px;
   color: #7f7f7f; }
-  .newMemb p.name {
+  .newMemb p.userName {
     text-transform: capitalize; }
   .newMemb p.dateRegistered {
     margin-left: auto; }
@@ -527,7 +527,7 @@ header {
   margin-left: 10px;
   color: #7f7f7f;
   max-width: 75%; }
-  .recentAct p .name {
+  .recentAct p .userName {
     text-transform: capitalize; }
 .recentAct img {
   border-radius: 50%;
