@@ -9,7 +9,7 @@ function addMembers() {
     success: function(data) {
         members = data.results
         addUsersToPage();
-        addUserSearch();
+
         }
     });
 }
@@ -59,41 +59,25 @@ function addUsersToPage() {
     }
 }
 
-function addUserSearch() {
-    let users = document.querySelectorAll("span.userName");
-    for (let i = 0; i < users.length; i++) {
-        const userName = users[i].textContent;
-        console.log(userName);
-        
-        $( "#userSearch" ).autocomplete({
-            source: [userName]
-            });
-    }
-}
-
 // -----------------------------------------------------//
 // Grid Areas searchbox function -------------------------
 // -----------------------------------------------------//
-$(document).ready(function($){
+const input = document.getElementById("gridSearchInput");
+const gridContainer = document.querySelector('.container__main');
+const gridAreas = document.querySelectorAll('.container__main>div');
 
-    $('.live-search-list>div').each(function(){
-    $(this).attr('data-search-term', $(this).children().first()[0].innerText.toLowerCase());
-    });
-    
-    $('.live-search-box').on('keyup', function(){
-    
-    var searchTerm = $(this).val().toLowerCase();
-    
-        $('.live-search-list>div').each(function(){
-    
-            if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
-        });
-    });
-});
+function searchBox() {
+    const filter = input.value.toUpperCase();
+    for (let i = 0; i < gridAreas.length; i++) {
+        if (gridAreas[i].firstElementChild.innerText.toUpperCase().indexOf(filter) > -1) {
+            gridAreas[i].style.display = "";
+        } else {
+            gridAreas[i].style.display = "none";
+        }
+    }
+}
+
+input.addEventListener('keyup', searchBox);
 
 
 // -----------------------------------------------------//

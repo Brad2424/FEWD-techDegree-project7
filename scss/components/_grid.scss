@@ -16,36 +16,6 @@
             grid-template-rows: 70px 1fr;
         }
     }
-// this grid is for graph section 
-    &main {
-        margin-top: 20px;
-        display: grid;
-        grid-template-rows: repeat(8, 300px);
-        grid-template-areas:
-            "traffic"
-            "dailyTraf"
-            "mobileUsers"
-            "socialStats"
-            "newMemb"
-            "recentAct"
-            "messageUser"
-            "settings";
-
-            > div { // selects all grid area divs
-                @include border($side: -top);
-             }
-
-            @include mq(medium) {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: repeat(5, 300px);
-                grid-template-areas:
-                    "traffic traffic"
-                    "dailyTraf mobileUsers"
-                    "socialStats socialStats"
-                    "newMemb recentAct"
-                    "messageUser settings";
-            }
-        }
 }
 
 // grid areas for overall page layout
@@ -54,55 +24,49 @@ main {
 }
 header {
     grid-area: header;
-    border-bottom: solid lightgrey 2px;
+    @include border($side: -bottom, $thick: 2px);
 }
 nav {
     grid-area: nav;
-    border-right: solid lightgrey 2px;
+    @include border($side: -right, $thick: 2px);
 }
 
-// grid areas for graph section
-.traffic {
-    grid-area: traffic;
+// Main area flex conatiner and items
+.container__main {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.dailyTraf {
-    grid-area: dailyTraf;
-    @include mq(small) {
-        @include border($side: -right);
+.traffic,
+.dailyTraf,
+.mobileUsers,
+.socialStats,
+.newMemb,
+.recentAct,
+.messageUser,
+.settings {
+    height: 350px;
+    width: 100%;
+    @include border($side: -top);
+}
+
+.dailyTraf, .mobileUsers, .newMemb, .recentAct, .messageUser, .settings {
+    @include mq(medium) {
+        width: 50%;
     }
 }
 
-.mobileUsers {
-    grid-area: mobileUsers;
-}
-
-.socialStats {
-    grid-area: socialStats;
-    @include flexy();
-}
-
-.newMemb {
-    grid-area: newMemb;
-    @include mq(small) {
+//left hand-side flex items
+.dailyTraf, .newMemb, .messageUser {
+    @include mq(medium) {
         @include border($side: -right);
     }
-}
-
-.recentAct {
-    grid-area: recentAct;
 }
 
 .messageUser {
-    grid-area: messageUser;
     @include flexy();
-    @include mq(small) {
-        @include border($side: -right);
-    }
 }
-
 .settings {
-    grid-area: settings;
     @include flexy();
     div {
         @include flexy($dir: row, $alignItems: center);

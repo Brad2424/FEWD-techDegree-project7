@@ -99,18 +99,6 @@ span.try-me {
     .grid-container__page {
       grid-template-columns: 70px 1fr;
       grid-template-rows: 70px 1fr; } }
-.grid-container__main {
-  margin-top: 20px;
-  display: grid;
-  grid-template-rows: repeat(8, 300px);
-  grid-template-areas: "traffic" "dailyTraf" "mobileUsers" "socialStats" "newMemb" "recentAct" "messageUser" "settings"; }
-  .grid-container__main > div {
-    border-top: solid lightgrey 1px; }
-  @media (min-width: 768px) {
-    .grid-container__main {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(5, 300px);
-      grid-template-areas: "traffic traffic" "dailyTraf mobileUsers" "socialStats socialStats" "newMemb recentAct" "messageUser settings"; } }
 
 main {
   grid-area: main; }
@@ -123,42 +111,35 @@ nav {
   grid-area: nav;
   border-right: solid lightgrey 2px; }
 
-.traffic {
-  grid-area: traffic; }
-
-.dailyTraf {
-  grid-area: dailyTraf; }
-  @media (min-width: 485px) {
-    .dailyTraf {
-      border-right: solid lightgrey 1px; } }
-
-.mobileUsers {
-  grid-area: mobileUsers; }
-
-.socialStats {
-  grid-area: socialStats;
+.container__main {
   display: flex;
-  flex-direction: column; }
+  flex-wrap: wrap; }
 
-.newMemb {
-  grid-area: newMemb; }
-  @media (min-width: 485px) {
-    .newMemb {
-      border-right: solid lightgrey 1px; } }
+.traffic,
+.dailyTraf,
+.mobileUsers,
+.socialStats,
+.newMemb,
+.recentAct,
+.messageUser,
+.settings {
+  height: 350px;
+  width: 100%;
+  border-top: solid lightgrey 1px; }
 
-.recentAct {
-  grid-area: recentAct; }
+@media (min-width: 768px) {
+  .dailyTraf, .mobileUsers, .newMemb, .recentAct, .messageUser, .settings {
+    width: 50%; } }
+
+@media (min-width: 768px) {
+  .dailyTraf, .newMemb, .messageUser {
+    border-right: solid lightgrey 1px; } }
 
 .messageUser {
-  grid-area: messageUser;
   display: flex;
   flex-direction: column; }
-  @media (min-width: 485px) {
-    .messageUser {
-      border-right: solid lightgrey 1px; } }
 
 .settings {
-  grid-area: settings;
   display: flex;
   flex-direction: column; }
   .settings div {
@@ -367,9 +348,8 @@ header {
       width: 15%; } }
 
 .graphDiv {
-  position: relative;
   width: 95%;
-  height: 75%;
+  height: 85%;
   margin: 0 auto; }
 
 .traffic .graph-options {
@@ -382,9 +362,8 @@ header {
   font-size: 0.8rem;
   text-transform: capitalize; }
 .traffic .graphDiv {
-  position: relative;
   width: 95%;
-  height: 65%;
+  height: 85%;
   margin: 0 auto; }
   @media (min-width: 485px) {
     .traffic .graphDiv {
