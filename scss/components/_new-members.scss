@@ -21,7 +21,7 @@
     p {
         margin-left: 10px;
         color: $primary-font-color;
-        &.userName {
+        .userName {
             text-transform: capitalize;
         }
         &.dateRegistered {

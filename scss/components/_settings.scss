@@ -1,3 +1,11 @@
+.settings {
+    @include flexy();
+    div {
+        @include flexy($dir: row, $alignItems: center);
+        flex: 1;
+        max-height: 60px;
+    }
+}
 button.switch {
     border-radius: 30px;
     @include border($color: $primary-font-color);

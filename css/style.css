@@ -135,20 +135,6 @@ nav {
   .dailyTraf, .newMemb, .messageUser {
     border-right: solid lightgrey 1px; } }
 
-.messageUser {
-  display: flex;
-  flex-direction: column; }
-
-.settings {
-  display: flex;
-  flex-direction: column; }
-  .settings div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex: 1;
-    max-height: 60px; }
-
 .alert-div {
   background-color: #7477bf;
   display: flex;
@@ -369,18 +355,49 @@ header {
     .traffic .graphDiv {
       height: 75%; } }
 
-.messageUser input {
-  margin: 10px auto 0 auto; }
-.messageUser button {
-  width: 90%;
-  margin: 10px auto; }
-.messageUser p {
-  text-align: center;
-  margin: 5px 0 0 0;
-  color: green; }
+.messageUser {
+  display: flex;
+  flex-direction: column; }
+  .messageUser input {
+    margin: 10px auto 0 auto; }
+  .messageUser button {
+    width: 90%;
+    margin: 10px auto; }
+  .messageUser p {
+    text-align: center;
+    margin: 5px 0 0 0;
+    color: green; }
 
 #message {
   height: 60%; }
+
+.autocomplete {
+  width: 90%;
+  margin: 10px auto 0 auto;
+  position: relative; }
+  .autocomplete input {
+    width: 100%; }
+
+.autocomplete-items {
+  position: absolute;
+  color: #7f7f7f;
+  border-top: solid lightgrey 1px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0; }
+
+.autocomplete-items div {
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: pointer;
+  border: solid lightgrey 1px; }
+
+.autocomplete-items div:hover, .autocomplete-items div:active {
+  background-color: white; }
 
 .social-stat {
   margin: 5px;
@@ -470,7 +487,7 @@ header {
 .newMemb p {
   margin-left: 10px;
   color: #7f7f7f; }
-  .newMemb p.userName {
+  .newMemb p .userName {
     text-transform: capitalize; }
   .newMemb p.dateRegistered {
     margin-left: auto; }
@@ -530,6 +547,16 @@ header {
 
 .activityTime {
   color: #7477bf; }
+
+.settings {
+  display: flex;
+  flex-direction: column; }
+  .settings div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    max-height: 60px; }
 
 button.switch {
   border-radius: 30px;

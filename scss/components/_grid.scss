@@ -62,15 +62,3 @@ nav {
         @include border($side: -right);
     }
 }
-
-.messageUser {
-    @include flexy();
-}
-.settings {
-    @include flexy();
-    div {
-        @include flexy($dir: row, $alignItems: center);
-        flex: 1;
-        max-height: 60px;
-    }
-}
