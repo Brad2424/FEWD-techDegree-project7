@@ -88,8 +88,9 @@ new Chart(dailyTraf, {
         labels: ["Monday", 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         datasets: [{
             label: 'Number of Visits',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3, 5, 2, 3, 9],
             backgroundColor: [
+                'rgba(56, 59, 131, 1)',
                 'rgba(56, 59, 131, 1)',
                 'rgba(56, 59, 131, 1)',
                 'rgba(56, 59, 131, 1)',
@@ -98,6 +99,7 @@ new Chart(dailyTraf, {
                 'rgba(56, 59, 131, 1)',
             ],
             borderColor: [
+                'rgba(56, 59, 131, 1)',
                 'rgba(56, 59, 131, 1)',
                 'rgba(56, 59, 131, 1)',
                 'rgba(56, 59, 131, 1)',
