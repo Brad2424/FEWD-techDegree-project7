@@ -399,151 +399,135 @@ header {
 .autocomplete-items div:hover, .autocomplete-items div:active {
   background-color: white; }
 
-.social-stat {
-  margin: 5px;
-  border: solid lightgrey 1px;
-  border-radius: 5px;
-  width: 250px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center; }
-  @media (min-width: 768px) {
-    .social-stat {
-      height: 60%; } }
-  @media (min-width: 1024px) {
-    .social-stat {
-      width: 400px; } }
-  @media (min-width: 1300px) {
-    .social-stat {
-      height: 90%; } }
-  .social-stat * {
-    display: inline-block; }
-  .social-stat P {
-    font-size: 1.5em;
-    margin: 0;
-    color: #7f7f7f; }
-    @media (min-width: 485px) {
-      .social-stat P {
-        font-size: 2em; } }
-    @media (min-width: 1024px) {
-      .social-stat P {
-        font-size: 3em; } }
-  .social-stat h4 {
-    font-size: 1em;
-    margin: 0;
-    color: #383b83;
-    font-weight: normal; }
-    @media (min-width: 485px) {
-      .social-stat h4 {
-        font-size: 1.2em; } }
-    @media (min-width: 1024px) {
-      .social-stat h4 {
-        font-size: 1.5em; } }
-  .social-stat svg {
-    height: 30px;
-    width: 30px;
-    background-color: #7477bf;
-    border-radius: 50%;
-    margin: 5px; }
-    @media (min-width: 485px) {
-      .social-stat svg {
-        height: 40px;
-        width: 40px; } }
-    @media (min-width: 1024px) {
-      .social-stat svg {
-        height: 70px;
-        width: 70px; } }
-    .social-stat svg path {
-      fill: white; }
-
 .flex-container__social {
-  height: 50%;
+  flex: 1;
+  height: 80%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap; }
-  @media (min-width: 485px) {
-    .flex-container__social {
-      margin: 30px 0; } }
 
-.newMemb div:nth-child(n+3) {
-  border-top: solid lightgrey 1px; }
-.newMemb div {
+.social-box {
+  margin: 10px;
+  border: solid lightgrey 1px;
+  border-radius: 5px;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  width: 95%;
-  height: 40px;
-  margin: 0 auto; }
-  @media (min-width: 485px) {
-    .newMemb div {
-      height: 65px; } }
-  .newMemb div * {
-    font-size: 0.8em; }
+  width: 90%; }
+  @media (min-width: 768px) {
+    .social-box {
+      width: 370px; } }
+  .social-box * {
+    margin: 10px; }
+  .social-box P {
+    font-size: 2em;
+    color: #7f7f7f; }
     @media (min-width: 485px) {
-      .newMemb div * {
-        font-size: 0.9em; } }
-.newMemb p {
-  margin-left: 10px;
-  color: #7f7f7f; }
-  .newMemb p .userName {
-    text-transform: capitalize; }
-  .newMemb p.dateRegistered {
-    margin-left: auto; }
-  .newMemb p .email {
-    color: #7477bf;
-    text-transform: lowercase; }
-.newMemb img {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px; }
-  @media (min-width: 485px) {
-    .newMemb img {
-      width: 40px;
-      height: 40px; } }
+      .social-box P {
+        font-size: 3em; } }
+  .social-box h4 {
+    font-size: 1.5em;
+    color: #383b83;
+    font-weight: normal; }
+  .social-box svg {
+    height: 50px;
+    width: 50px;
+    background-color: #7477bf;
+    border-radius: 50%; }
+    @media (min-width: 768px) {
+      .social-box svg {
+        height: 70px;
+        width: 70px; } }
+    .social-box svg path {
+      fill: white; }
 
-.recentAct div:nth-child(n+3) {
-  border-top: solid lightgrey 1px; }
-.recentAct div {
+.newMemb {
   display: flex;
-  align-items: center;
-  width: 95%;
-  height: 42px;
-  margin: 0 auto; }
-  @media (min-width: 485px) {
-    .recentAct div {
-      height: 65px; } }
-  .recentAct div * {
-    font-size: 0.8em; }
+  flex-direction: column; }
+  .newMemb div:nth-child(n+3) {
+    border-top: solid lightgrey 1px; }
+  .newMemb div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 40px;
+    margin: 0 auto; }
     @media (min-width: 485px) {
-      .recentAct div * {
-        font-size: 0.9em; } }
-.recentAct p {
-  margin-left: 10px;
-  color: #7f7f7f;
-  max-width: 75%; }
-  .recentAct p .userName {
-    text-transform: capitalize; }
-.recentAct img {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px; }
-  @media (min-width: 485px) {
-    .recentAct img {
-      width: 40px;
-      height: 40px; } }
-.recentAct a {
-  margin-left: auto;
-  text-decoration: none;
-  transform: rotate(-90deg);
-  font-size: 2em;
-  font-weight: 100;
-  color: #7477bf; }
-  @media (min-width: 485px) {
-    .recentAct a {
-      font-size: 2.5em;
-      font-weight: 100; } }
+      .newMemb div {
+        height: 65px; } }
+    .newMemb div * {
+      font-size: 0.8em; }
+      @media (min-width: 485px) {
+        .newMemb div * {
+          font-size: 0.9em; } }
+  .newMemb p {
+    margin-left: 10px;
+    color: #7f7f7f; }
+    .newMemb p .userName {
+      text-transform: capitalize; }
+    .newMemb p.dateRegistered {
+      margin-left: auto; }
+    .newMemb p .email {
+      color: #7477bf;
+      text-transform: lowercase; }
+  .newMemb img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px; }
+    @media (min-width: 485px) {
+      .newMemb img {
+        width: 40px;
+        height: 40px; } }
+
+.recentAct {
+  display: flex;
+  flex-direction: column; }
+  .recentAct div:nth-child(n+3) {
+    border-top: solid lightgrey 1px; }
+  .recentAct div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 42px;
+    margin: 0 auto; }
+    @media (min-width: 485px) {
+      .recentAct div {
+        height: 65px; } }
+    .recentAct div * {
+      font-size: 0.8em; }
+      @media (min-width: 485px) {
+        .recentAct div * {
+          font-size: 0.9em; } }
+  .recentAct p {
+    margin-left: 10px;
+    color: #7f7f7f;
+    max-width: 75%; }
+    .recentAct p .userName {
+      text-transform: capitalize; }
+  .recentAct img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px; }
+    @media (min-width: 485px) {
+      .recentAct img {
+        width: 40px;
+        height: 40px; } }
+  .recentAct a {
+    margin-left: auto;
+    text-decoration: none;
+    transform: rotate(-90deg);
+    font-size: 2em;
+    font-weight: 100;
+    color: #7477bf; }
+    @media (min-width: 485px) {
+      .recentAct a {
+        font-size: 2.5em;
+        font-weight: 100; } }
 
 .activityTime {
   color: #7477bf; }
