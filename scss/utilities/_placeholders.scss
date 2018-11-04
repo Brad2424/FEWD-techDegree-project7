@@ -1,8 +1,9 @@
 %input {
     border-radius: 5px;
-    border: lightgray solid 1px;
     padding: 10px;
     overflow: hidden;
+    width: 90%;
+    @include border();
 }
 
 %button {
@@ -16,4 +17,13 @@
     font-size: 0.9em;
     font-weight: 600;
     cursor: pointer;
+}
+
+%switchCircle {
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    background: $secondary-font-color;
+    position: relative;
+    transition: 0.1s ease;
 }

@@ -1,8 +1,8 @@
 .messageUser {
+    @include flexy();
     input {
         @extend %input;
         margin: 10px auto 0 auto;
-        width: 90%;
     }
     button {
         @extend %button;
@@ -18,4 +18,36 @@
 
 #message {
     height: 60%;
+}
+
+//auto-complete for search user input
+.autocomplete {
+    width: 90%;
+    margin: 10px auto 0 auto;
+    position: relative;
+    input {
+        width: 100%;
+    }
+}
+
+.autocomplete-items {
+position: absolute;
+color: $primary-font-color;
+@include border($side: -top);
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+border-bottom: none;
+border-top: none;
+z-index: 99;
+top: 100%;
+left: 0;
+right: 0;
+}
+.autocomplete-items div {
+background-color: #f1f1f1;
+padding: 10px;
+cursor: pointer;
+@include border;
+}
+.autocomplete-items div:hover, .autocomplete-items div:active {
+background-color: white; 
 }

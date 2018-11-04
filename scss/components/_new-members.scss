@@ -1,8 +1,10 @@
 .newMemb {
     div:nth-child(n+3) {
-        border-top: solid lightgrey 1px;
+        @include border($side: -top);
     }
+    @include flexy();
     div {
+        flex: 1;
         display: flex;
         align-items: center;
         width: 95%;
@@ -21,7 +23,16 @@
     p {
         margin-left: 10px;
         color: $primary-font-color;
-
+        .userName {
+            text-transform: capitalize;
+        }
+        &.dateRegistered {
+            margin-left: auto;
+        }
+        .email {
+            color: $primary-color;
+            text-transform: lowercase;
+        }
     }
     img {
         border-radius: 50%;
@@ -32,11 +43,4 @@
             height: 40px;
         }
     }
-}
-
-#dateRegistered {
-    margin-left: auto;
-}
-#email {
-    color: $primary-color;
 }

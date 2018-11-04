@@ -1,6 +1,14 @@
+.settings {
+    @include flexy();
+    div {
+        @include flexy($dir: row, $alignItems: center);
+        flex: 1;
+        max-height: 60px;
+    }
+}
 button.switch {
     border-radius: 30px;
-    border: 1px solid $primary-font-color;
+    @include border($color: $primary-font-color);
     display: inline-flex;
     padding: 2px;
     background: $primary-color;
@@ -8,23 +16,26 @@ button.switch {
     margin-right: 20px;
     span {
         padding: 5px 0;
-        color:$secondary-font-color;
+        color: $secondary-font-color;
         display: inline-block;
         margin: auto 0;
         font-weight: 600;
     }
-    #switchCircle {
-        border-radius: 50%;
-        width: 29px;
-        height: 29px;
-        background: $secondary-font-color;
-        position: relative;
+    &#publicProfile #switchCircle {
+        @extend %switchCircle;
         left: 29px;
-        transition: 0.1s ease;
+    }
+    &#emailNotifications{
+        background: rgb(255, 75, 75);
+        border: rgb(255, 75, 75) 1px solid;
+            #switchCircle{
+            @extend %switchCircle;
+            left: -21px;
+        }
     }
 }
 
-label.switch {
+label {
     margin-left: 20px;
     margin-right: auto;
     color: $primary-font-color;

@@ -1,10 +1,11 @@
 .search-bar-div input, .messageUser input {
   border-radius: 5px;
-  border: lightgray solid 1px;
   padding: 10px;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 90%;
+  border: solid lightgrey 1px; }
 
-.messageUser button, .settings button {
+.traffic button, .messageUser button, .settings button {
   border-radius: 5px;
   background: #7477bf;
   border: #7477bf solid 1px;
@@ -15,6 +16,14 @@
   font-size: 0.9em;
   font-weight: 600;
   cursor: pointer; }
+
+button.switch#publicProfile #switchCircle, button.switch#emailNotifications #switchCircle {
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  background: white;
+  position: relative;
+  transition: 0.1s ease; }
 
 @keyframes jingle {
   20% {
@@ -66,6 +75,17 @@ h3 {
     h3 {
       margin: 10px 0 15px 20px; } }
 
+span.try-me {
+  color: #7c3c00;
+  text-transform: lowercase;
+  font-style: italic;
+  font-weight: bold;
+  display: none; }
+  @media (min-width: 768px) {
+    span.try-me {
+      display: inline;
+      font-size: 1rem; } }
+
 .grid-container__page {
   display: grid;
   grid-template-columns: 45px 1fr;
@@ -79,16 +99,9 @@ h3 {
     .grid-container__page {
       grid-template-columns: 70px 1fr;
       grid-template-rows: 70px 1fr; } }
-.grid-container__main {
-  margin-top: 20px;
-  display: grid;
-  grid-template-rows: repeat(8, 200px);
-  grid-template-areas: "traffic" "dailyTraf" "mobileUsers" "socialStats" "newMemb" "recentAct" "messageUser" "settings"; }
-  @media (min-width: 485px) {
-    .grid-container__main {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: repeat(5, 300px);
-      grid-template-areas: "traffic traffic" "dailyTraf mobileUsers" "socialStats socialStats" "newMemb recentAct" "messageUser settings"; } }
+
+main {
+  grid-area: main; }
 
 header {
   grid-area: header;
@@ -98,64 +111,34 @@ nav {
   grid-area: nav;
   border-right: solid lightgrey 2px; }
 
-main {
-  grid-area: main; }
-
-.traffic {
-  grid-area: traffic;
-  border-top: solid lightgrey 1px; }
-
-.dailyTraf {
-  grid-area: dailyTraf;
-  border-top: solid lightgrey 1px; }
-  @media (min-width: 485px) {
-    .dailyTraf {
-      border-right: solid lightgrey 1px; } }
-
-.mobileUsers {
-  grid-area: mobileUsers;
-  border-top: solid lightgrey 1px; }
-
-.socialStats {
-  grid-area: socialStats;
-  border-top: solid lightgrey 1px;
+.container__main {
   display: flex;
-  flex-direction: column; }
+  flex-wrap: wrap; }
 
-.newMemb {
-  grid-area: newMemb;
-  border-top: solid lightgrey 1px; }
-  @media (min-width: 485px) {
-    .newMemb {
-      border-right: solid lightgrey 1px; } }
-
-.recentAct {
-  grid-area: recentAct;
-  border-top: solid lightgrey 1px; }
-
-.messageUser {
-  grid-area: messageUser;
-  display: flex;
-  flex-direction: column;
-  border-top: solid lightgrey 1px; }
-  @media (min-width: 485px) {
-    .messageUser {
-      border-right: solid lightgrey 1px; } }
-
+.traffic,
+.dailyTraf,
+.mobileUsers,
+.socialStats,
+.newMemb,
+.recentAct,
+.messageUser,
 .settings {
-  grid-area: settings;
-  border-top: solid lightgrey 1px;
-  display: flex;
-  flex-direction: column; }
-  .settings div {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    max-height: 60px; }
+  height: 350px;
+  width: 100%;
+  border-top: solid lightgrey 1px; }
+
+@media (min-width: 768px) {
+  .dailyTraf, .mobileUsers, .newMemb, .recentAct, .messageUser, .settings {
+    width: 50%; } }
+
+@media (min-width: 768px) {
+  .dailyTraf, .newMemb, .messageUser {
+    border-right: solid lightgrey 1px; } }
 
 .alert-div {
   background-color: #7477bf;
   display: flex;
+  flex-direction: row;
   align-items: center;
   width: 95%;
   border: #7477bf solid 1px;
@@ -172,11 +155,11 @@ main {
       .alert-div p {
         font-size: 0.9em; } }
   .alert-div button {
-    border: #7477bf solid 1px;
-    font-size: 1.7em;
-    padding: 0;
-    margin-right: 5px;
-    margin-left: auto;
+    border: solid white 2px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 0 5px;
+    margin: 2px 5px 2px auto;
     cursor: pointer; }
   .alert-div .alert {
     font-size: 1.2em;
@@ -199,15 +182,16 @@ nav {
 header {
   background-color: #7477bf;
   display: flex;
+  flex-direction: row;
   align-items: center; }
   header * {
     color: white; }
-  header span {
+  header span.user-name {
     margin-right: 10px;
     font-size: 0.8em;
     display: none; }
     @media (min-width: 485px) {
-      header span {
+      header span.user-name {
         margin-right: 20px;
         font-size: 1em;
         display: inline; } }
@@ -226,6 +210,7 @@ header {
         font-size: 1.8em; } }
   header a {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     border-right: solid lightgrey 1px; }
   header .notification {
@@ -238,28 +223,82 @@ header {
         height: 40px; } }
     header .notification:hover {
       animation: jingle 0.7s ease-out forwards; }
-  header .profile {
+  header img.profile {
+    border: solid white 1px;
     border-radius: 50%;
     width: 35px;
     height: 35px;
     margin-right: 10px;
     margin-left: 10px; }
     @media (min-width: 485px) {
-      header .profile {
+      header img.profile {
         width: 40px;
         height: 40px; } }
+
+/* The container <div> - needed to position the dropdown content */
+.notificationDropDown {
+  position: relative;
+  display: inline-block; }
+
+.notification-badge {
+  position: absolute;
+  left: 40%;
+  font-size: 0.6rem;
+  border-radius: 50%;
+  background: red;
+  padding: 2px 4px;
+  z-index: 1;
+  margin: 0; }
+  @media (min-width: 485px) {
+    .notification-badge {
+      font-size: 0.8rem;
+      padding: 2px 6px; } }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  width: 250px;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0; }
+  @media (min-width: 485px) {
+    .dropdown-content {
+      right: unset; } }
+  .dropdown-content p {
+    margin: 5px 0;
+    color: #7f7f7f;
+    font-size: 0.8rem;
+    font-weight: 400; }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #7f7f7f;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  border-top: solid lightgrey 1px; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: white; }
+
+.show {
+  display: block; }
 
 .search-bar-div {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  height: 60px;
-  border-bottom: lightgrey 2px solid; }
+  border-bottom: solid lightgrey 2px;
+  height: 60px; }
   @media (min-width: 485px) {
     .search-bar-div {
       float: right;
       width: 70%;
-      border-left: lightgrey 2px solid; } }
+      border-left: solid lightgrey 2px; } }
   @media (min-width: 768px) {
     .search-bar-div {
       justify-content: initial;
@@ -269,8 +308,7 @@ header {
       width: 85%; } }
 
 .search-bar-div input {
-  margin: auto;
-  width: 90%; }
+  margin: auto; }
   @media (min-width: 768px) {
     .search-bar-div input {
       width: 70%;
@@ -281,10 +319,11 @@ header {
   @media (min-width: 485px) {
     .tab-div {
       display: inline-flex;
-      width: 30%;
-      height: 60px;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
+      width: 30%;
+      height: 60px;
       font-size: 1.1em; } }
   @media (min-width: 768px) {
     .tab-div {
@@ -295,172 +334,217 @@ header {
       width: 15%; } }
 
 .graphDiv {
-  position: relative;
   width: 95%;
-  height: 80%;
+  height: 85%;
   margin: 0 auto; }
 
-.messageUser input {
-  margin: 10px auto 0 auto;
-  width: 90%; }
-.messageUser button {
-  width: 90%;
-  margin: 10px auto; }
-.messageUser p {
-  text-align: center;
-  margin: 5px 0 0 0;
-  color: green; }
+.traffic .graph-options {
+  text-align: right;
+  width: 85%;
+  margin: 0 auto; }
+.traffic button {
+  padding: 5px;
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-transform: capitalize; }
+.traffic .graphDiv {
+  width: 95%;
+  height: 85%;
+  margin: 0 auto; }
+  @media (min-width: 485px) {
+    .traffic .graphDiv {
+      height: 75%; } }
+
+.messageUser {
+  display: flex;
+  flex-direction: column; }
+  .messageUser input {
+    margin: 10px auto 0 auto; }
+  .messageUser button {
+    width: 90%;
+    margin: 10px auto; }
+  .messageUser p {
+    text-align: center;
+    margin: 5px 0 0 0;
+    color: green; }
 
 #message {
   height: 60%; }
 
-.social-stat {
-  margin: 5px;
-  border: solid lightgrey 1px;
-  border-radius: 5px;
-  width: 250px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center; }
-  @media (min-width: 768px) {
-    .social-stat {
-      height: 60%; } }
-  @media (min-width: 1024px) {
-    .social-stat {
-      width: 400px; } }
-  @media (min-width: 1300px) {
-    .social-stat {
-      height: 90%; } }
-  .social-stat * {
-    display: inline-block; }
-  .social-stat P {
-    font-size: 1.5em;
-    margin: 0;
-    color: #7f7f7f; }
-    @media (min-width: 485px) {
-      .social-stat P {
-        font-size: 2em; } }
-    @media (min-width: 1024px) {
-      .social-stat P {
-        font-size: 3em; } }
-  .social-stat h4 {
-    font-size: 1em;
-    margin: 0;
-    color: #383b83;
-    font-weight: normal; }
-    @media (min-width: 485px) {
-      .social-stat h4 {
-        font-size: 1.2em; } }
-    @media (min-width: 1024px) {
-      .social-stat h4 {
-        font-size: 1.5em; } }
-  .social-stat svg {
-    height: 30px;
-    width: 30px;
-    background-color: #7477bf;
-    border-radius: 50%;
-    margin: 5px; }
-    @media (min-width: 485px) {
-      .social-stat svg {
-        height: 40px;
-        width: 40px; } }
-    @media (min-width: 1024px) {
-      .social-stat svg {
-        height: 70px;
-        width: 70px; } }
-    .social-stat svg path {
-      fill: white; }
+.autocomplete {
+  width: 90%;
+  margin: 10px auto 0 auto;
+  position: relative; }
+  .autocomplete input {
+    width: 100%; }
+
+.autocomplete-items {
+  position: absolute;
+  color: #7f7f7f;
+  border-top: solid lightgrey 1px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  top: 100%;
+  left: 0;
+  right: 0; }
+
+.autocomplete-items div {
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: pointer;
+  border: solid lightgrey 1px; }
+
+.autocomplete-items div:hover, .autocomplete-items div:active {
+  background-color: white; }
 
 .flex-container__social {
-  height: 50%;
+  flex: 1;
+  height: 80%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center; }
-  @media (min-width: 485px) {
-    .flex-container__social {
-      margin: 30px 0; } }
-
-.newMemb div:nth-child(n+3) {
-  border-top: solid lightgrey 1px; }
-.newMemb div {
-  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  width: 95%;
-  height: 40px;
-  margin: 0 auto; }
-  @media (min-width: 485px) {
-    .newMemb div {
-      height: 65px; } }
-  .newMemb div * {
-    font-size: 0.8em; }
-    @media (min-width: 485px) {
-      .newMemb div * {
-        font-size: 0.9em; } }
-.newMemb p {
-  margin-left: 10px;
-  color: #7f7f7f; }
-.newMemb img {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px; }
-  @media (min-width: 485px) {
-    .newMemb img {
-      width: 40px;
-      height: 40px; } }
+  flex-wrap: wrap; }
 
-#dateRegistered {
-  margin-left: auto; }
-
-#email {
-  color: #7477bf; }
-
-.recentAct div:nth-child(n+3) {
-  border-top: solid lightgrey 1px; }
-.recentAct div {
+.social-box {
+  margin: 10px;
+  border: solid lightgrey 1px;
+  border-radius: 5px;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  width: 95%;
-  height: 42px;
-  margin: 0 auto; }
-  @media (min-width: 485px) {
-    .recentAct div {
-      height: 65px; } }
-  .recentAct div * {
-    font-size: 0.8em; }
+  width: 90%; }
+  @media (min-width: 768px) {
+    .social-box {
+      width: 370px; } }
+  .social-box * {
+    margin: 10px; }
+  .social-box P {
+    font-size: 2em;
+    color: #7f7f7f; }
     @media (min-width: 485px) {
-      .recentAct div * {
-        font-size: 0.9em; } }
-.recentAct p {
-  margin-left: 10px;
-  color: #7f7f7f;
-  max-width: 75%; }
-.recentAct img {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px; }
-  @media (min-width: 485px) {
-    .recentAct img {
-      width: 40px;
-      height: 40px; } }
-.recentAct a {
-  margin-left: auto;
-  text-decoration: none;
-  transform: rotate(-90deg);
-  font-size: 2em;
-  font-weight: 100;
-  color: #7477bf; }
-  @media (min-width: 485px) {
-    .recentAct a {
-      font-size: 2.5em;
-      font-weight: 100; } }
+      .social-box P {
+        font-size: 3em; } }
+  .social-box h4 {
+    font-size: 1.5em;
+    color: #383b83;
+    font-weight: normal; }
+  .social-box svg {
+    height: 50px;
+    width: 50px;
+    background-color: #7477bf;
+    border-radius: 50%; }
+    @media (min-width: 768px) {
+      .social-box svg {
+        height: 70px;
+        width: 70px; } }
+    .social-box svg path {
+      fill: white; }
 
-#activityTime {
+.newMemb {
+  display: flex;
+  flex-direction: column; }
+  .newMemb div:nth-child(n+3) {
+    border-top: solid lightgrey 1px; }
+  .newMemb div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 40px;
+    margin: 0 auto; }
+    @media (min-width: 485px) {
+      .newMemb div {
+        height: 65px; } }
+    .newMemb div * {
+      font-size: 0.8em; }
+      @media (min-width: 485px) {
+        .newMemb div * {
+          font-size: 0.9em; } }
+  .newMemb p {
+    margin-left: 10px;
+    color: #7f7f7f; }
+    .newMemb p .userName {
+      text-transform: capitalize; }
+    .newMemb p.dateRegistered {
+      margin-left: auto; }
+    .newMemb p .email {
+      color: #7477bf;
+      text-transform: lowercase; }
+  .newMemb img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px; }
+    @media (min-width: 485px) {
+      .newMemb img {
+        width: 40px;
+        height: 40px; } }
+
+.recentAct {
+  display: flex;
+  flex-direction: column; }
+  .recentAct div:nth-child(n+3) {
+    border-top: solid lightgrey 1px; }
+  .recentAct div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 42px;
+    margin: 0 auto; }
+    @media (min-width: 485px) {
+      .recentAct div {
+        height: 65px; } }
+    .recentAct div * {
+      font-size: 0.8em; }
+      @media (min-width: 485px) {
+        .recentAct div * {
+          font-size: 0.9em; } }
+  .recentAct p {
+    margin-left: 10px;
+    color: #7f7f7f;
+    max-width: 75%; }
+    .recentAct p .userName {
+      text-transform: capitalize; }
+  .recentAct img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px; }
+    @media (min-width: 485px) {
+      .recentAct img {
+        width: 40px;
+        height: 40px; } }
+  .recentAct a {
+    margin-left: auto;
+    text-decoration: none;
+    transform: rotate(-90deg);
+    font-size: 2em;
+    font-weight: 100;
+    color: #7477bf; }
+    @media (min-width: 485px) {
+      .recentAct a {
+        font-size: 2.5em;
+        font-weight: 100; } }
+
+.activityTime {
   color: #7477bf; }
+
+.settings {
+  display: flex;
+  flex-direction: column; }
+  .settings div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    max-height: 60px; }
 
 button.switch {
   border-radius: 30px;
-  border: 1px solid #7f7f7f;
+  border: solid #7f7f7f 1px;
   display: inline-flex;
   padding: 2px;
   background: #7477bf;
@@ -472,23 +556,22 @@ button.switch {
     display: inline-block;
     margin: auto 0;
     font-weight: 600; }
-  button.switch #switchCircle {
-    border-radius: 50%;
-    width: 29px;
-    height: 29px;
-    background: white;
-    position: relative;
-    left: 29px;
-    transition: 0.1s ease; }
+  button.switch#publicProfile #switchCircle {
+    left: 29px; }
+  button.switch#emailNotifications {
+    background: #ff4b4b;
+    border: #ff4b4b 1px solid; }
+    button.switch#emailNotifications #switchCircle {
+      left: -21px; }
 
-label.switch {
+label {
   margin-left: 20px;
   margin-right: auto;
   color: #7f7f7f;
   font-size: 0.8em;
   cursor: pointer; }
   @media (min-width: 485px) {
-    label.switch {
+    label {
       font-size: 0.9em; } }
 
 select {

@@ -1,74 +1,43 @@
-.social-stat {
-    margin: 5px;
-    border: solid lightgrey 1px;
-    border-radius: 5px;
-    width: 250px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    @include mq(medium) {
-        height: 60%;
-    }
-    @include mq(large) {
-        width: 400px;
-    }
-    @include mq(x-large) {
-        height: 90%;
-    }
-        * {
-            display: inline-block;
-        }
-        P {
-            font-size: 1.5em;
-            margin: 0;
-            color: $primary-font-color;
-            @include mq(small) {
-                font-size: 2em;
-            }
-            @include mq(large) {
-                font-size: 3em;
-            }
-        }
-        h4 {
-            font-size: 1em;
-            margin: 0;
-            color: $secondary-color;
-            font-weight: normal;
-            @include mq(small) {
-                font-size: 1.2em;
-            }
-            @include mq(large) {
-                font-size: 1.5em;
-            }
-        }
-        svg {
-        height: 30px;
-        width: 30px;
-        background-color: $primary-color;
-        border-radius: 50%;
-        margin: 5px;
-            @include mq(small) {
-                height: 40px;
-                width: 40px;
-            }
-            @include mq(large) {
-                height: 70px;
-                width: 70px;
-            }
-            path {
-                fill: white;
-            }
-        }
+.flex-container__social {
+    flex: 1;
+    height: 80%;
+    @include flexy($dir: row, $just: center, $alignItems: center, $wrap: wrap);
 }
 
-.flex-container__social {
-    height: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+.social-box {
+    margin: 10px;
+    @include border($radius: 5px);
+    @include flexy($dir: row, $just: center, $alignItems: center);
+    width: 90%;
+    @include mq(medium) {
+        width: 370px;
+    }
+    * {
+        margin: 10px;
+    }
+    P {
+        font-size: 2em;
+        color: $primary-font-color;
         @include mq(small) {
-            margin: 30px 0;
+            font-size: 3em;
         }
-
+    }
+    h4 {
+        font-size: 1.5em;
+        color: $secondary-color;
+        font-weight: normal;
+    }
+    svg {
+    height: 50px;
+    width: 50px;
+    background-color: $primary-color;
+    border-radius: 50%;
+        @include mq(medium) {
+            height: 70px;
+            width: 70px;
+        }
+        path {
+            fill: white;
+        }
+    }
 }

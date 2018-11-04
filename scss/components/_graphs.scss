@@ -1,6 +1,28 @@
 .graphDiv {
-        position: relative;
         width: 95%;
-        height: 80%;
+        height: 85%;
         margin: 0 auto;
+}
+
+.traffic {
+        .graph-options {
+                text-align: right;
+                width: 85%;
+                margin: 0 auto;
+        }
+        button {
+        @extend %button;
+        padding: 5px;
+        font-weight: 400;
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        }
+        .graphDiv {
+                width: 95%;
+                height: 85%;
+                margin: 0 auto;
+                @include mq(small) {
+                        height: 75%;
+                }
+        }
 }

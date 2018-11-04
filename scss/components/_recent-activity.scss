@@ -1,8 +1,10 @@
 .recentAct {
     div:nth-child(n+3) {
-        border-top: solid lightgrey 1px;
+        @include border($side: -top);
     }
+    @include flexy();
     div {
+        flex: 1;
         display: flex;
         align-items: center;
         width: 95%;
@@ -22,6 +24,10 @@
         margin-left: 10px;
         color: $primary-font-color;
         max-width: 75%;
+
+        .userName {
+            text-transform: capitalize;
+        }
     }
     img {
         border-radius: 50%;
@@ -45,6 +51,6 @@
         }
     }
 }
-#activityTime {
+.activityTime {
     color: $primary-color;
 }

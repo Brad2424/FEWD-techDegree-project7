@@ -1,4 +1,4 @@
-
+// this grid is for overall page layout
 .grid-container__ {
     &page {
         display: grid;
@@ -16,104 +16,49 @@
             grid-template-rows: 70px 1fr;
         }
     }
-
-    &main {
-        margin-top: 20px;
-        display: grid;
-        grid-template-rows: repeat(8, 200px);
-        grid-template-areas:
-            "traffic"
-            "dailyTraf"
-            "mobileUsers"
-            "socialStats"
-            "newMemb"
-            "recentAct"
-            "messageUser"
-            "settings";
-            @include mq(small) {
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: repeat(5, 300px);
-                grid-template-areas:
-                    "traffic traffic"
-                    "dailyTraf mobileUsers"
-                    "socialStats socialStats"
-                    "newMemb recentAct"
-                    "messageUser settings";
-            }
-        }
 }
 
-header {
-    grid-area: header;
-    border-bottom: solid lightgrey 2px;
-}
-
-nav {
-    grid-area: nav;
-    border-right: solid lightgrey 2px;
-}
-
+// grid areas for overall page layout
 main {
     grid-area: main;
 }
-
-.traffic {
-    grid-area: traffic;
-    border-top: solid lightgrey 1px;
+header {
+    grid-area: header;
+    @include border($side: -bottom, $thick: 2px);
+}
+nav {
+    grid-area: nav;
+    @include border($side: -right, $thick: 2px);
 }
 
-.dailyTraf {
-    grid-area: dailyTraf;
-    border-top: solid lightgrey 1px;
-    @include mq(small) {
-        border-right: solid lightgrey 1px;
-    }
-}
-
-.mobileUsers {
-    grid-area: mobileUsers;
-    border-top: solid lightgrey 1px;
-}
-
-.socialStats {
-    grid-area: socialStats;
-    border-top: solid lightgrey 1px;
+// Main area flex conatiner and items
+.container__main {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
-.newMemb {
-    grid-area: newMemb;
-    border-top: solid lightgrey 1px;
-    @include mq(small) {
-        border-right: solid lightgrey 1px;
-    }
-}
-
-.recentAct {
-    grid-area: recentAct;
-    border-top: solid lightgrey 1px;
-}
-
-.messageUser {
-    grid-area: messageUser;
-    display: flex;
-    flex-direction: column;
-    border-top: solid lightgrey 1px;
-    @include mq(small) {
-        border-right: solid lightgrey 1px;
-    }
-}
-
+.traffic,
+.dailyTraf,
+.mobileUsers,
+.socialStats,
+.newMemb,
+.recentAct,
+.messageUser,
 .settings {
-    grid-area: settings;
-    border-top: solid lightgrey 1px;
-    display: flex;
-    flex-direction: column;
-    div {
-        display: flex;
-        align-items: center;
-        flex: 1;
-        max-height: 60px;
+    height: 350px;
+    width: 100%;
+    @include border($side: -top);
+}
+
+.dailyTraf, .mobileUsers, .newMemb, .recentAct, .messageUser, .settings {
+    @include mq(medium) {
+        width: 50%;
+    }
+}
+
+//left hand-side flex items
+.dailyTraf, .newMemb, .messageUser {
+    @include mq(medium) {
+        @include border($side: -right);
     }
 }

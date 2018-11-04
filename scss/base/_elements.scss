@@ -35,3 +35,16 @@ h3 {
         margin: 10px 0 15px 20px;
     }
 }
+
+//messages to point out the dashboard functions
+span.try-me {
+    color: rgb(124, 60, 0);
+    text-transform: lowercase;
+    font-style: italic;
+    font-weight: bold;
+    display: none;
+    @include mq(medium) {
+        display: inline;
+        font-size: 1rem;
+    }
+}
